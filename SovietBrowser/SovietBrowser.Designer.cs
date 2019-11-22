@@ -43,7 +43,7 @@
       this.btnSearch.Name = "btnSearch";
       this.btnSearch.Size = new System.Drawing.Size(75, 23);
       this.btnSearch.TabIndex = 1;
-      this.btnSearch.Text = "Search";
+      this.btnSearch.Text = "⌕";
       this.btnSearch.UseVisualStyleBackColor = true;
       this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
       // 
@@ -53,7 +53,7 @@
       this.btnHome.Name = "btnHome";
       this.btnHome.Size = new System.Drawing.Size(75, 23);
       this.btnHome.TabIndex = 2;
-      this.btnHome.Text = "Home";
+      this.btnHome.Text = "🏠";
       this.btnHome.UseVisualStyleBackColor = true;
       this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
       // 
