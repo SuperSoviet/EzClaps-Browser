@@ -9,16 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
-
+using CefSharp.Example;
+using CefSharp.Example.Handlers;
+//_chromiumWebBrowser.DownloadHandler = new DownloadHandler(); need a find a way to use this
 namespace SovietBrowser {
 
   public partial class SovietBrowser : Form {
     private ChromiumWebBrowser _chromiumWebBrowser;
     private string _homePage = "google.nl";
 
+    public DownloadHandler DownloadHandler { get; }
+
     public SovietBrowser() {
       InitializeComponent();
-
+      
       if (DesignMode) return;
       InitializeChromium();
     }
@@ -32,7 +36,7 @@ namespace SovietBrowser {
       _chromiumWebBrowser.TitleChanged += Soviet_TitleChanged;
       txtSearchBar.Text = _homePage;
     }
-
+    
     private void btnSearch_Click(object sender, EventArgs e) {
       ChromiumWebBrowser soviet = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
       if (soviet != null)
@@ -73,7 +77,6 @@ namespace SovietBrowser {
       ChromiumWebBrowser soviet = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
       if (soviet != null)
         _chromiumWebBrowser.Reload(true);
-
     }
     private void btnNewTab_Click(object sender, EventArgs e) {
       TabPage tab = new TabPage();
@@ -121,7 +124,7 @@ namespace SovietBrowser {
 
       if (tabControl.TabPages.Count == 0) {
         Dispose();
-      }
+      } 
     }
   }
 }
