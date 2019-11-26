@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CefSharp;
+using CefSharp.WinForms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,6 +13,8 @@ namespace SovietBrowser {
     /// </summary>
     [STAThread]
     static void Main() {
+      CefSettings settings = new CefSettings();
+      Cef.Initialize(settings);
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       Application.Run(new SovietBrowser());

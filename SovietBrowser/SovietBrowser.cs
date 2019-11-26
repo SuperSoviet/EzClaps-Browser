@@ -26,14 +26,17 @@ namespace SovietBrowser {
     private void InitializeChromium() {
       _chromiumWebBrowser = new ChromiumWebBrowser(_homePage);
       _chromiumWebBrowser.Dock = DockStyle.Fill;
-      pnlWebView.Controls.Add(_chromiumWebBrowser);
-
+      tabPage1.Controls.Add(_chromiumWebBrowser);
+      _chromiumWebBrowser.Parent = tabControl.SelectedTab;
+      _chromiumWebBrowser.AddressChanged += Soviet_AddressChanged;
+      _chromiumWebBrowser.TitleChanged += Soviet_TitleChanged;
       txtSearchBar.Text = _homePage;
     }
 
     private void btnSearch_Click(object sender, EventArgs e) {
-      string url = txtSearchBar.Text;
-      NavigateToNewPage(url);
+      ChromiumWebBrowser soviet = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
+      if (soviet != null)
+        _chromiumWebBrowser.Load(txtSearchBar.Text);
     }
 
     private void btnHome_Click(object sender, EventArgs e) {
@@ -47,18 +50,53 @@ namespace SovietBrowser {
     }
 
     private void btnBack_Click(object sender, EventArgs e) {
-      if (_chromiumWebBrowser.CanGoBack)
-        _chromiumWebBrowser.Back();
+      ChromiumWebBrowser soviet = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
+      if (soviet != null) {
+        if (_chromiumWebBrowser.CanGoBack)
+          _chromiumWebBrowser.Back();
+      }
     }
 
     private void btnForward_Click(object sender, EventArgs e) {
-      if (_chromiumWebBrowser.CanGoForward)
-        _chromiumWebBrowser.Forward();
+      ChromiumWebBrowser soviet = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
+      if (soviet != null) {
+
+
+        if (_chromiumWebBrowser.CanGoForward)
+
+          _chromiumWebBrowser.Forward();
+
+      }
     }
 
     private void btnRefresh_Click(object sender, EventArgs e) {
-      _chromiumWebBrowser.Reload(true);
+      ChromiumWebBrowser soviet = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
+      if (soviet != null)
+        _chromiumWebBrowser.Reload(true);
 
+    }
+    private void btnNewTab_Click(object sender, EventArgs e) {
+      TabPage tab = new TabPage();
+      tab.Text = "New tab";
+      tabControl.Controls.Add(tab);
+      tabControl.SelectTab(tabControl.TabCount - 1);
+      ChromiumWebBrowser _chromiumWebBrowser = new ChromiumWebBrowser("Google.com");
+      _chromiumWebBrowser.Parent = tab;
+      _chromiumWebBrowser.Dock = DockStyle.Fill;
+      txtSearchBar.Text = "google.com";
+      _chromiumWebBrowser.AddressChanged += Soviet_AddressChanged;
+      _chromiumWebBrowser.TitleChanged += Soviet_TitleChanged;
+    }
+
+    private void Soviet_AddressChanged(object sender, AddressChangedEventArgs e) {
+      this.Invoke(new MethodInvoker(() => {
+        txtSearchBar.Text = e.Address;
+      }));
+    }
+    private void Soviet_TitleChanged(object sender, TitleChangedEventArgs e) {
+      this.Invoke(new MethodInvoker(() => {
+        tabControl.SelectedTab.Text = e.Title;
+      }));
     }
   }
 }
