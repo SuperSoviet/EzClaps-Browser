@@ -30,6 +30,7 @@
       this.pnlWebView = new System.Windows.Forms.Panel();
       this.btnBack = new System.Windows.Forms.Button();
       this.btnForward = new System.Windows.Forms.Button();
+      this.btnRefresh = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // txtSearchBar
@@ -75,7 +76,7 @@
       // 
       // btnBack
       // 
-      this.btnBack.Location = new System.Drawing.Point(326, 1);
+      this.btnBack.Location = new System.Drawing.Point(203, 1);
       this.btnBack.Name = "btnBack";
       this.btnBack.Size = new System.Drawing.Size(41, 19);
       this.btnBack.TabIndex = 4;
@@ -85,7 +86,7 @@
       // 
       // btnForward
       // 
-      this.btnForward.Location = new System.Drawing.Point(373, 1);
+      this.btnForward.Location = new System.Drawing.Point(250, 1);
       this.btnForward.Name = "btnForward";
       this.btnForward.Size = new System.Drawing.Size(41, 19);
       this.btnForward.TabIndex = 5;
@@ -93,12 +94,23 @@
       this.btnForward.UseVisualStyleBackColor = true;
       this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
       // 
+      // btnRefresh
+      // 
+      this.btnRefresh.Location = new System.Drawing.Point(333, 1);
+      this.btnRefresh.Name = "btnRefresh";
+      this.btnRefresh.Size = new System.Drawing.Size(44, 20);
+      this.btnRefresh.TabIndex = 6;
+      this.btnRefresh.Text = "↺";
+      this.btnRefresh.UseVisualStyleBackColor = true;
+      this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+      // 
       // SovietBrowser
       // 
       this.AcceptButton = this.btnSearch;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1568, 1198);
+      this.Controls.Add(this.btnRefresh);
       this.Controls.Add(this.btnForward);
       this.Controls.Add(this.btnBack);
       this.Controls.Add(this.pnlWebView);
@@ -122,6 +134,7 @@
     private System.Windows.Forms.Panel pnlWebView;
     private System.Windows.Forms.Button btnBack;
     private System.Windows.Forms.Button btnForward;
+    private System.Windows.Forms.Button btnRefresh;
   }
 }
 

@@ -55,5 +55,10 @@ namespace SovietBrowser {
       if (_chromiumWebBrowser.CanGoForward)
         _chromiumWebBrowser.Forward();
     }
+
+    private void btnRefresh_Click(object sender, EventArgs e) {
+      _chromiumWebBrowser.Reload(true);
+
+    }
   }
 }
