@@ -45,5 +45,15 @@ namespace SovietBrowser {
       if (string.IsNullOrWhiteSpace(url)) return;
       _chromiumWebBrowser.Load(url);
     }
+
+    private void btnBack_Click(object sender, EventArgs e) {
+      if (_chromiumWebBrowser.CanGoBack)
+        _chromiumWebBrowser.Back();
+    }
+
+    private void btnForward_Click(object sender, EventArgs e) {
+      if (_chromiumWebBrowser.CanGoForward)
+        _chromiumWebBrowser.Forward();
+    }
   }
 }

@@ -28,20 +28,24 @@
       this.btnSearch = new System.Windows.Forms.Button();
       this.btnHome = new System.Windows.Forms.Button();
       this.pnlWebView = new System.Windows.Forms.Panel();
+      this.btnBack = new System.Windows.Forms.Button();
+      this.btnForward = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // txtSearchBar
       // 
-      this.txtSearchBar.Location = new System.Drawing.Point(640, 0);
+      this.txtSearchBar.Location = new System.Drawing.Point(480, 0);
+      this.txtSearchBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.txtSearchBar.Name = "txtSearchBar";
-      this.txtSearchBar.Size = new System.Drawing.Size(863, 22);
+      this.txtSearchBar.Size = new System.Drawing.Size(648, 20);
       this.txtSearchBar.TabIndex = 0;
       // 
       // btnSearch
       // 
-      this.btnSearch.Location = new System.Drawing.Point(1509, -1);
+      this.btnSearch.Location = new System.Drawing.Point(1132, -1);
+      this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnSearch.Name = "btnSearch";
-      this.btnSearch.Size = new System.Drawing.Size(75, 23);
+      this.btnSearch.Size = new System.Drawing.Size(56, 19);
       this.btnSearch.TabIndex = 1;
       this.btnSearch.Text = "⌕";
       this.btnSearch.UseVisualStyleBackColor = true;
@@ -49,9 +53,10 @@
       // 
       // btnHome
       // 
-      this.btnHome.Location = new System.Drawing.Point(559, 0);
+      this.btnHome.Location = new System.Drawing.Point(419, 0);
+      this.btnHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnHome.Name = "btnHome";
-      this.btnHome.Size = new System.Drawing.Size(75, 23);
+      this.btnHome.Size = new System.Drawing.Size(56, 19);
       this.btnHome.TabIndex = 2;
       this.btnHome.Text = "🏠";
       this.btnHome.UseVisualStyleBackColor = true;
@@ -62,22 +67,46 @@
       this.pnlWebView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.pnlWebView.Location = new System.Drawing.Point(1, 28);
+      this.pnlWebView.Location = new System.Drawing.Point(1, 23);
+      this.pnlWebView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.pnlWebView.Name = "pnlWebView";
-      this.pnlWebView.Size = new System.Drawing.Size(2094, 902);
+      this.pnlWebView.Size = new System.Drawing.Size(1570, 1176);
       this.pnlWebView.TabIndex = 3;
+      // 
+      // btnBack
+      // 
+      this.btnBack.Location = new System.Drawing.Point(326, 1);
+      this.btnBack.Name = "btnBack";
+      this.btnBack.Size = new System.Drawing.Size(41, 19);
+      this.btnBack.TabIndex = 4;
+      this.btnBack.Text = "←";
+      this.btnBack.UseVisualStyleBackColor = true;
+      this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+      // 
+      // btnForward
+      // 
+      this.btnForward.Location = new System.Drawing.Point(373, 1);
+      this.btnForward.Name = "btnForward";
+      this.btnForward.Size = new System.Drawing.Size(41, 19);
+      this.btnForward.TabIndex = 5;
+      this.btnForward.Text = "→";
+      this.btnForward.UseVisualStyleBackColor = true;
+      this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
       // 
       // SovietBrowser
       // 
       this.AcceptButton = this.btnSearch;
-      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(2091, 929);
+      this.ClientSize = new System.Drawing.Size(1568, 1198);
+      this.Controls.Add(this.btnForward);
+      this.Controls.Add(this.btnBack);
       this.Controls.Add(this.pnlWebView);
       this.Controls.Add(this.btnHome);
       this.Controls.Add(this.btnSearch);
       this.Controls.Add(this.txtSearchBar);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+      this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.Name = "SovietBrowser";
       this.Text = "SovietBrowser";
       this.ResumeLayout(false);
@@ -91,6 +120,8 @@
     private System.Windows.Forms.Button btnSearch;
     private System.Windows.Forms.Button btnHome;
     private System.Windows.Forms.Panel pnlWebView;
+    private System.Windows.Forms.Button btnBack;
+    private System.Windows.Forms.Button btnForward;
   }
 }
 
