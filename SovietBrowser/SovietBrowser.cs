@@ -98,5 +98,30 @@ namespace SovietBrowser {
         tabControl.SelectedTab.Text = e.Title;
       }));
     }
+
+    private void btnRemoveTab_Click(object sender, EventArgs e) {
+      if (tabControl.TabPages.Count == 0) {
+        return;
+      }
+
+      var tabindex = tabControl.SelectedIndex;
+
+      var tabPage = tabControl.TabPages[tabindex];
+
+      
+      if (tabPage != null && !tabPage.IsDisposed) {
+        tabPage.Dispose();
+      }
+
+      tabControl.TabPages.Remove(tabPage);
+
+      tabPage.Dispose();
+
+     tabControl.SelectedIndex = tabindex - 1;
+
+      if (tabControl.TabPages.Count == 0) {
+        Dispose();
+      }
+    }
   }
 }

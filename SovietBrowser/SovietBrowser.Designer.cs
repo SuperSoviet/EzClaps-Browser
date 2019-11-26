@@ -34,6 +34,7 @@
       this.btnForward = new System.Windows.Forms.Button();
       this.btnRefresh = new System.Windows.Forms.Button();
       this.btnNewTab = new System.Windows.Forms.Button();
+      this.btnRemoveTab = new System.Windows.Forms.Button();
       this.pnlWebView.SuspendLayout();
       this.tabControl.SuspendLayout();
       this.SuspendLayout();
@@ -134,7 +135,7 @@
       // 
       // btnNewTab
       // 
-      this.btnNewTab.Location = new System.Drawing.Point(1193, 0);
+      this.btnNewTab.Location = new System.Drawing.Point(4, 2);
       this.btnNewTab.Name = "btnNewTab";
       this.btnNewTab.Size = new System.Drawing.Size(36, 23);
       this.btnNewTab.TabIndex = 7;
@@ -142,12 +143,23 @@
       this.btnNewTab.UseVisualStyleBackColor = true;
       this.btnNewTab.Click += new System.EventHandler(this.btnNewTab_Click);
       // 
+      // btnRemoveTab
+      // 
+      this.btnRemoveTab.Location = new System.Drawing.Point(46, 1);
+      this.btnRemoveTab.Name = "btnRemoveTab";
+      this.btnRemoveTab.Size = new System.Drawing.Size(35, 23);
+      this.btnRemoveTab.TabIndex = 8;
+      this.btnRemoveTab.Text = "x";
+      this.btnRemoveTab.UseVisualStyleBackColor = true;
+      this.btnRemoveTab.Click += new System.EventHandler(this.btnRemoveTab_Click);
+      // 
       // SovietBrowser
       // 
       this.AcceptButton = this.btnSearch;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1568, 1146);
+      this.Controls.Add(this.btnRemoveTab);
       this.Controls.Add(this.btnNewTab);
       this.Controls.Add(this.btnRefresh);
       this.Controls.Add(this.btnForward);
@@ -179,6 +191,7 @@
     private System.Windows.Forms.Button btnNewTab;
     private System.Windows.Forms.TabControl tabControl;
     private System.Windows.Forms.TabPage tabPage1;
+    private System.Windows.Forms.Button btnRemoveTab;
   }
 }
 
