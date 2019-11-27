@@ -11,84 +11,80 @@ using CefSharp;
 using CefSharp.WinForms;
 using CefSharp.Example;
 using CefSharp.Example.Handlers;
-//_chromiumWebBrowser.DownloadHandler = new DownloadHandler(); need a find a way to use this
 namespace SovietBrowser {
-
   public partial class SovietBrowser : Form {
-    private ChromiumWebBrowser _chromiumWebBrowser;
-    private string _homePage = "google.nl";
+    //_chromiumWebBrowser.DownloadHandler = new DownloadHandler(); 
+    // need a find a way to use this
 
+    private string _homePage = "google.nl";
     public DownloadHandler DownloadHandler { get; }
 
     public SovietBrowser() {
       InitializeComponent();
-      
+
       if (DesignMode) return;
-      InitializeChromium();
+      InitializeChromium(tabPage1);
+    }
+    // " private void inintializeChromium  = Method
+    private void InitializeChromium(TabPage anyTabPage) { //(TabPage anyTabPage) =  Arguments
+   
+      var browser = new ChromiumWebBrowser(_homePage);
+      browser.Dock = DockStyle.Fill;
+      anyTabPage.Controls.Add(browser);
+      browser.Parent = tabControl.SelectedTab;
+      browser.AddressChanged += Soviet_AddressChanged;
+      browser.TitleChanged += Soviet_TitleChanged;
+     
+    }
+    private void Firsttabpage() {
+
     }
 
-    private void InitializeChromium() {
-      _chromiumWebBrowser = new ChromiumWebBrowser(_homePage);
-      _chromiumWebBrowser.Dock = DockStyle.Fill;
-      tabPage1.Controls.Add(_chromiumWebBrowser);
-      _chromiumWebBrowser.Parent = tabControl.SelectedTab;
-      _chromiumWebBrowser.AddressChanged += Soviet_AddressChanged;
-      _chromiumWebBrowser.TitleChanged += Soviet_TitleChanged;
-      txtSearchBar.Text = _homePage;
-    }
-    
     private void btnSearch_Click(object sender, EventArgs e) {
-      ChromiumWebBrowser soviet = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
-      if (soviet != null)
-        _chromiumWebBrowser.Load(txtSearchBar.Text);
+      ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
+      NavigateToNewPage(browser, txtSearchBar.Text);
     }
 
     private void btnHome_Click(object sender, EventArgs e) {
+      ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
       txtSearchBar.Text = _homePage;
-      NavigateToNewPage(_homePage);
+      NavigateToNewPage(browser, _homePage);
     }
 
-    private void NavigateToNewPage(string url) {
+    private void NavigateToNewPage(ChromiumWebBrowser browser, string url) {
       if (string.IsNullOrWhiteSpace(url)) return;
-      _chromiumWebBrowser.Load(url);
+      // ?. checks if browser is null, and if it isn't it calls the Load() method
+      browser?.Load(url);
     }
 
     private void btnBack_Click(object sender, EventArgs e) {
-      ChromiumWebBrowser soviet = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
-      if (soviet != null) {
-        if (_chromiumWebBrowser.CanGoBack)
-          _chromiumWebBrowser.Back();
+      ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
+      if (browser != null) {
+        if (browser.CanGoBack)
+          browser.Back();
       }
     }
 
     private void btnForward_Click(object sender, EventArgs e) {
-      ChromiumWebBrowser soviet = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
-      if (soviet != null) {
+      ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
+      if (browser != null) {
 
 
-        if (_chromiumWebBrowser.CanGoForward)
+        if (browser.CanGoForward)
 
-          _chromiumWebBrowser.Forward();
+         browser.Forward();
 
       }
     }
 
     private void btnRefresh_Click(object sender, EventArgs e) {
-      ChromiumWebBrowser soviet = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
-      if (soviet != null)
-        _chromiumWebBrowser.Reload(true);
+      ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
+      if (browser != null)
+       browser.Reload(true);
     }
+
     private void btnNewTab_Click(object sender, EventArgs e) {
-      TabPage tab = new TabPage();
-      tab.Text = "New tab";
-      tabControl.Controls.Add(tab);
-      tabControl.SelectTab(tabControl.TabCount - 1);
-      ChromiumWebBrowser _chromiumWebBrowser = new ChromiumWebBrowser("Google.com");
-      _chromiumWebBrowser.Parent = tab;
-      _chromiumWebBrowser.Dock = DockStyle.Fill;
-      txtSearchBar.Text = "google.com";
-      _chromiumWebBrowser.AddressChanged += Soviet_AddressChanged;
-      _chromiumWebBrowser.TitleChanged += Soviet_TitleChanged;
+      createNewTab();
     }
 
     private void Soviet_AddressChanged(object sender, AddressChangedEventArgs e) {
@@ -107,24 +103,41 @@ namespace SovietBrowser {
         return;
       }
 
-      var tabindex = tabControl.SelectedIndex;
+      var tabIndex = tabControl.SelectedIndex;
 
-      var tabPage = tabControl.TabPages[tabindex];
+      var tabPage = tabControl.TabPages[tabIndex];
 
-      
+
       if (tabPage != null && !tabPage.IsDisposed) {
-        tabPage.Dispose();
-      }
+        tabIndex = 1;
+        }
+      
 
       tabControl.TabPages.Remove(tabPage);
 
       tabPage.Dispose();
-
-     tabControl.SelectedIndex = tabindex - 1;
+     
+          
+        
+      
+//*FIXED* TODO: fix bug when you remove the first tab (it will not select the other tab)
+      tabControl.SelectedIndex = tabIndex - 1;
 
       if (tabControl.TabPages.Count == 0) {
-        Dispose();
-      } 
+        
+      }
+    }
+    // Create method that you can reuse to create a new browser and add it to
+    // a TabPage
+    private void createNewTab() {
+      TabPage newTabPage = new TabPage();
+      newTabPage.Text = "New tab";
+      tabControl.Controls.Add(newTabPage);
+      tabControl.SelectTab(tabControl.TabCount - 1);
+      InitializeChromium(newTabPage);
+    }
+    private void SovietBrowser_FormClosing(object sender, FormClosingEventArgs e) {
+      Cef.Shutdown();
     }
   }
 }

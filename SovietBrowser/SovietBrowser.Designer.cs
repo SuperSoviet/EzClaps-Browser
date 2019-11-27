@@ -172,6 +172,7 @@
       this.Margin = new System.Windows.Forms.Padding(2);
       this.Name = "SovietBrowser";
       this.Text = "SovietBrowser";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SovietBrowser_FormClosing);
       this.pnlWebView.ResumeLayout(false);
       this.tabControl.ResumeLayout(false);
       this.ResumeLayout(false);
