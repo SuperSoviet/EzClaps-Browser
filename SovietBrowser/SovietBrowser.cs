@@ -27,7 +27,7 @@ namespace SovietBrowser {
     }
     // " private void inintializeChromium  = Method
     private void InitializeChromium(TabPage anyTabPage) { //(TabPage anyTabPage) =  Arguments
-   
+      
       var browser = new ChromiumWebBrowser(_homePage);
       browser.Dock = DockStyle.Fill;
       anyTabPage.Controls.Add(browser);
@@ -123,8 +123,8 @@ namespace SovietBrowser {
         
       }
     }
-    // Create method that you can reuse to create a new browser and add it to
-    // a TabPage
+    // *Fixed* Create method that you can reuse to create a new browser 
+    // and add it to a TabPage
     private void createNewTab() {
       TabPage newTabPage = new TabPage();
       newTabPage.Text = "New tab";
