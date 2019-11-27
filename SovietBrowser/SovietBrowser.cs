@@ -36,10 +36,6 @@ namespace SovietBrowser {
       browser.TitleChanged += Soviet_TitleChanged;
      
     }
-    private void Firsttabpage() {
-
-    }
-
     private void btnSearch_Click(object sender, EventArgs e) {
       ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
       NavigateToNewPage(browser, txtSearchBar.Text);
