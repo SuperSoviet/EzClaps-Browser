@@ -1,4 +1,4 @@
-﻿namespace SovietBrowser {
+﻿namespace EzClapsBrowser {
   partial class SovietBrowser {
     /// <summary>
     /// Required designer variable.
@@ -180,7 +180,7 @@
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Margin = new System.Windows.Forms.Padding(2);
       this.Name = "SovietBrowser";
-      this.Text = "SovietBrowser";
+      this.Text = "EzClaps Browser";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SovietBrowser_FormClosing);
       this.pnlWebView.ResumeLayout(false);
       this.tabControl.ResumeLayout(false);

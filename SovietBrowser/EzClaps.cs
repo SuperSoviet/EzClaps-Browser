@@ -11,7 +11,7 @@ using CefSharp;
 using CefSharp.WinForms;
 using CefSharp.Example;
 using CefSharp.Example.Handlers;
-namespace SovietBrowser {
+namespace EzClapsBrowser {
   public partial class SovietBrowser : Form {
     //_chromiumWebBrowser.DownloadHandler = new DownloadHandler(); 
     // need a find a way to use this

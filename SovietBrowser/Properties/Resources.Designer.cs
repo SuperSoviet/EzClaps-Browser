@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SovietBrowser.Properties {
+namespace EzClapsBrowser.Properties {
 
 
   /// <summary>

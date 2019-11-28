@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SovietBrowser", "SovietBrowser\SovietBrowser.csproj", "{92741289-66EA-4C15-9E9B-87AABEAD4E58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzClapsBrowser", "SovietBrowser\EzClapsBrowser.csproj", "{92741289-66EA-4C15-9E9B-87AABEAD4E58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,12 +15,12 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{92741289-66EA-4C15-9E9B-87AABEAD4E58}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{92741289-66EA-4C15-9E9B-87AABEAD4E58}.Debug|Any CPU.Build.0 = Debug|x86
-		{92741289-66EA-4C15-9E9B-87AABEAD4E58}.Debug|x86.ActiveCfg = Debug|x86
-		{92741289-66EA-4C15-9E9B-87AABEAD4E58}.Debug|x86.Build.0 = Debug|x86
-		{92741289-66EA-4C15-9E9B-87AABEAD4E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92741289-66EA-4C15-9E9B-87AABEAD4E58}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92741289-66EA-4C15-9E9B-87AABEAD4E58}.Release|x86.ActiveCfg = Release|Any CPU
-		{92741289-66EA-4C15-9E9B-87AABEAD4E58}.Release|x86.Build.0 = Release|Any CPU
+		{92741289-66EA-4C15-9E9B-87AABEAD4E58}.Debug|x86.ActiveCfg = Release|x86
+		{92741289-66EA-4C15-9E9B-87AABEAD4E58}.Debug|x86.Build.0 = Release|x86
+		{92741289-66EA-4C15-9E9B-87AABEAD4E58}.Release|Any CPU.ActiveCfg = Release|x86
+		{92741289-66EA-4C15-9E9B-87AABEAD4E58}.Release|Any CPU.Build.0 = Release|x86
+		{92741289-66EA-4C15-9E9B-87AABEAD4E58}.Release|x86.ActiveCfg = Debug|x64
+		{92741289-66EA-4C15-9E9B-87AABEAD4E58}.Release|x86.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
