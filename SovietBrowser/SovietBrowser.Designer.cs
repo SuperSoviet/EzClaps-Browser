@@ -35,6 +35,7 @@
       this.btnRefresh = new System.Windows.Forms.Button();
       this.btnNewTab = new System.Windows.Forms.Button();
       this.btnRemoveTab = new System.Windows.Forms.Button();
+      this.PbarDownload = new System.Windows.Forms.ProgressBar();
       this.pnlWebView.SuspendLayout();
       this.tabControl.SuspendLayout();
       this.SuspendLayout();
@@ -153,12 +154,20 @@
       this.btnRemoveTab.UseVisualStyleBackColor = true;
       this.btnRemoveTab.Click += new System.EventHandler(this.btnRemoveTab_Click);
       // 
+      // PbarDownload
+      // 
+      this.PbarDownload.Location = new System.Drawing.Point(1241, 1);
+      this.PbarDownload.Name = "PbarDownload";
+      this.PbarDownload.Size = new System.Drawing.Size(100, 23);
+      this.PbarDownload.TabIndex = 9;
+      // 
       // SovietBrowser
       // 
       this.AcceptButton = this.btnSearch;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1568, 1146);
+      this.Controls.Add(this.PbarDownload);
       this.Controls.Add(this.btnRemoveTab);
       this.Controls.Add(this.btnNewTab);
       this.Controls.Add(this.btnRefresh);
@@ -193,6 +202,7 @@
     private System.Windows.Forms.TabControl tabControl;
     private System.Windows.Forms.TabPage tabPage1;
     private System.Windows.Forms.Button btnRemoveTab;
+    private System.Windows.Forms.ProgressBar PbarDownload;
   }
 }
 

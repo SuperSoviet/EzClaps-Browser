@@ -19,22 +19,25 @@ namespace SovietBrowser {
     private string _homePage = "google.nl";
     public DownloadHandler DownloadHandler { get; }
 
+
     public SovietBrowser() {
       InitializeComponent();
 
       if (DesignMode) return;
+
       InitializeChromium(tabPage1);
     }
     // " private void inintializeChromium  = Method
     private void InitializeChromium(TabPage anyTabPage) { //(TabPage anyTabPage) =  Arguments
-      
+
       var browser = new ChromiumWebBrowser(_homePage);
       browser.Dock = DockStyle.Fill;
       anyTabPage.Controls.Add(browser);
       browser.Parent = tabControl.SelectedTab;
       browser.AddressChanged += Soviet_AddressChanged;
       browser.TitleChanged += Soviet_TitleChanged;
-     
+      browser.DownloadHandler = new DownloadHandler();
+
     }
     private void btnSearch_Click(object sender, EventArgs e) {
       ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
@@ -68,7 +71,7 @@ namespace SovietBrowser {
 
         if (browser.CanGoForward)
 
-         browser.Forward();
+          browser.Forward();
 
       }
     }
@@ -76,7 +79,7 @@ namespace SovietBrowser {
     private void btnRefresh_Click(object sender, EventArgs e) {
       ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
       if (browser != null)
-       browser.Reload(true);
+        browser.Reload(true);
     }
 
     private void btnNewTab_Click(object sender, EventArgs e) {
@@ -106,21 +109,21 @@ namespace SovietBrowser {
 
       if (tabPage != null && !tabPage.IsDisposed) {
         tabIndex = 1;
-        }
-      
+      }
+
 
       tabControl.TabPages.Remove(tabPage);
 
       tabPage.Dispose();
-     
-          
-        
-      
-//*FIXED* TODO: fix bug when you remove the first tab (it will not select the other tab)
+
+
+
+
+      //*FIXED* TODO: fix bug when you remove the first tab (it will not select the other tab)
       tabControl.SelectedIndex = tabIndex - 1;
 
       if (tabControl.TabPages.Count == 0) {
-        
+
       }
     }
     // *Fixed* Create method that you can reuse to create a new browser 
@@ -132,6 +135,8 @@ namespace SovietBrowser {
       tabControl.SelectTab(tabControl.TabCount - 1);
       InitializeChromium(newTabPage);
     }
+
+
     private void SovietBrowser_FormClosing(object sender, FormClosingEventArgs e) {
       Cef.Shutdown();
     }
