@@ -1,5 +1,5 @@
 ﻿namespace EzClapsBrowser {
-  partial class SovietBrowser {
+  partial class EzClapsBrowser {
     /// <summary>
     /// Required designer variable.
     /// </summary>
@@ -23,7 +23,8 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SovietBrowser));
+      this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EzClapsBrowser));
       this.txtSearchBar = new System.Windows.Forms.TextBox();
       this.btnSearch = new System.Windows.Forms.Button();
       this.btnHome = new System.Windows.Forms.Button();
@@ -35,9 +36,13 @@
       this.btnRefresh = new System.Windows.Forms.Button();
       this.btnNewTab = new System.Windows.Forms.Button();
       this.btnRemoveTab = new System.Windows.Forms.Button();
-      this.PbarDownload = new System.Windows.Forms.ProgressBar();
+      this.CtxMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.ctxAddtab = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnMenu = new System.Windows.Forms.Button();
       this.pnlWebView.SuspendLayout();
       this.tabControl.SuspendLayout();
+      this.CtxMenu.SuspendLayout();
       this.SuspendLayout();
       // 
       // txtSearchBar
@@ -154,20 +159,46 @@
       this.btnRemoveTab.UseVisualStyleBackColor = true;
       this.btnRemoveTab.Click += new System.EventHandler(this.btnRemoveTab_Click);
       // 
-      // PbarDownload
+      // CtxMenu
       // 
-      this.PbarDownload.Location = new System.Drawing.Point(1241, 1);
-      this.PbarDownload.Name = "PbarDownload";
-      this.PbarDownload.Size = new System.Drawing.Size(100, 23);
-      this.PbarDownload.TabIndex = 9;
+      this.CtxMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem,
+            this.ctxAddtab});
+      this.CtxMenu.Name = "CtxMenu";
+      this.CtxMenu.Size = new System.Drawing.Size(181, 70);
       // 
-      // SovietBrowser
+      // menuToolStripMenuItem
+      // 
+      this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+      this.menuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.menuToolStripMenuItem.Text = "History";
+      this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
+      // 
+      // ctxAddtab
+      // 
+      this.ctxAddtab.Name = "ctxAddtab";
+      this.ctxAddtab.Size = new System.Drawing.Size(180, 22);
+      this.ctxAddtab.Text = "Add new tab";
+      this.ctxAddtab.Click += new System.EventHandler(this.ctxAddtab_Click);
+      // 
+      // btnMenu
+      // 
+      this.btnMenu.Location = new System.Drawing.Point(1534, 5);
+      this.btnMenu.Name = "btnMenu";
+      this.btnMenu.Size = new System.Drawing.Size(34, 20);
+      this.btnMenu.TabIndex = 9;
+      this.btnMenu.Text = "⭿";
+      this.btnMenu.UseVisualStyleBackColor = true;
+      this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+      // 
+      // EzClapsBrowser
       // 
       this.AcceptButton = this.btnSearch;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1568, 1146);
-      this.Controls.Add(this.PbarDownload);
+      this.ContextMenuStrip = this.CtxMenu;
+      this.Controls.Add(this.btnMenu);
       this.Controls.Add(this.btnRemoveTab);
       this.Controls.Add(this.btnNewTab);
       this.Controls.Add(this.btnRefresh);
@@ -179,11 +210,12 @@
       this.Controls.Add(this.txtSearchBar);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Margin = new System.Windows.Forms.Padding(2);
-      this.Name = "SovietBrowser";
+      this.Name = "EzClapsBrowser";
       this.Text = "EzClaps Browser";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SovietBrowser_FormClosing);
       this.pnlWebView.ResumeLayout(false);
       this.tabControl.ResumeLayout(false);
+      this.CtxMenu.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -202,7 +234,10 @@
     private System.Windows.Forms.TabControl tabControl;
     private System.Windows.Forms.TabPage tabPage1;
     private System.Windows.Forms.Button btnRemoveTab;
-    private System.Windows.Forms.ProgressBar PbarDownload;
+    private System.Windows.Forms.ContextMenuStrip CtxMenu;
+    private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem ctxAddtab;
+    private System.Windows.Forms.Button btnMenu;
   }
 }
 

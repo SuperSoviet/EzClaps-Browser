@@ -17,7 +17,7 @@ namespace EzClapsBrowser {
       Cef.Initialize(settings);
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new SovietBrowser());
+      Application.Run(new EzClapsBrowser());
     }
   }
 }

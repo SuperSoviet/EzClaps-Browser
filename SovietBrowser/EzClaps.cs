@@ -11,16 +11,17 @@ using CefSharp;
 using CefSharp.WinForms;
 using CefSharp.Example;
 using CefSharp.Example.Handlers;
+using System.IO;
+using SovietBrowser;
+
 namespace EzClapsBrowser {
-  public partial class SovietBrowser : Form {
+  public partial class EzClapsBrowser : Form {
     //_chromiumWebBrowser.DownloadHandler = new DownloadHandler(); 
     // need a find a way to use this
 
     private string _homePage = "google.nl";
     public DownloadHandler DownloadHandler { get; }
-
-
-    public SovietBrowser() {
+    public EzClapsBrowser() {
       InitializeComponent();
 
       if (DesignMode) return;
@@ -34,14 +35,18 @@ namespace EzClapsBrowser {
       browser.Dock = DockStyle.Fill;
       anyTabPage.Controls.Add(browser);
       browser.Parent = tabControl.SelectedTab;
-      browser.AddressChanged += Soviet_AddressChanged;
-      browser.TitleChanged += Soviet_TitleChanged;
+      browser.AddressChanged += EzClaps_AddressChanged;
+      browser.TitleChanged += EzClaps_TitleChanged;
       browser.DownloadHandler = new DownloadHandler();
 
     }
     private void btnSearch_Click(object sender, EventArgs e) {
       ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
       NavigateToNewPage(browser, txtSearchBar.Text);
+
+      using (StreamWriter history = File.AppendText(@"C:\History\History.txt")) {
+        history.WriteLine(txtSearchBar.Text);
+      }
     }
 
     private void btnHome_Click(object sender, EventArgs e) {
@@ -86,12 +91,12 @@ namespace EzClapsBrowser {
       createNewTab();
     }
 
-    private void Soviet_AddressChanged(object sender, AddressChangedEventArgs e) {
+    private void EzClaps_AddressChanged(object sender, AddressChangedEventArgs e) {
       this.Invoke(new MethodInvoker(() => {
         txtSearchBar.Text = e.Address;
       }));
     }
-    private void Soviet_TitleChanged(object sender, TitleChangedEventArgs e) {
+    private void EzClaps_TitleChanged(object sender, TitleChangedEventArgs e) {
       this.Invoke(new MethodInvoker(() => {
         tabControl.SelectedTab.Text = e.Title;
       }));
@@ -139,6 +144,20 @@ namespace EzClapsBrowser {
 
     private void SovietBrowser_FormClosing(object sender, FormClosingEventArgs e) {
       Cef.Shutdown();
+    }
+
+    private void btnMenu_Click(object sender, EventArgs e) {
+      CtxMenu.Show(MousePosition);
+    }
+
+    private void ctxAddtab_Click(object sender, EventArgs e) {
+      createNewTab();
+    }
+
+    private void menuToolStripMenuItem_Click(object sender, EventArgs e) {
+
+      showHistory showhistory = new showHistory();
+      showhistory.Show();
     }
   }
 }
