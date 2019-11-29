@@ -19,7 +19,7 @@ namespace SovietBrowser {
       var path = (@"C:\History\History.txt");
 
       string content = File.ReadAllText(path, Encoding.UTF8);
-     
+     string
     }
   }
 }
