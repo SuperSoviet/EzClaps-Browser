@@ -13,13 +13,9 @@ namespace SovietBrowser {
   public partial class showHistory : Form {
     public showHistory() {
       InitializeComponent();
-    }
-
-    private void textBox1_TextChanged(object sender, EventArgs e) {
       var path = (@"C:\History\History.txt");
-
-      string content = File.ReadAllText(path, Encoding.UTF8);
-     string
+      string content = File.ReadAllText(path);
+      txtHistory.Text = content;
     }
   }
 }

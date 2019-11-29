@@ -23,25 +23,27 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-      this.textBox1 = new System.Windows.Forms.TextBox();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(showHistory));
+      this.txtHistory = new System.Windows.Forms.TextBox();
       this.SuspendLayout();
       // 
-      // textBox1
+      // txtHistory
       // 
-      this.textBox1.Location = new System.Drawing.Point(13, 13);
-      this.textBox1.Multiline = true;
-      this.textBox1.Name = "textBox1";
-      this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.textBox1.Size = new System.Drawing.Size(702, 1087);
-      this.textBox1.TabIndex = 0;
-      this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+      this.txtHistory.Location = new System.Drawing.Point(13, 13);
+      this.txtHistory.Multiline = true;
+      this.txtHistory.Name = "txtHistory";
+      this.txtHistory.ReadOnly = true;
+      this.txtHistory.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+      this.txtHistory.Size = new System.Drawing.Size(702, 1087);
+      this.txtHistory.TabIndex = 0;
       // 
       // showHistory
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(727, 1112);
-      this.Controls.Add(this.textBox1);
+      this.Controls.Add(this.txtHistory);
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "showHistory";
       this.Text = "History";
       this.ResumeLayout(false);
@@ -51,6 +53,6 @@
 
     #endregion
 
-    private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.TextBox txtHistory;
   }
 }
