@@ -16,9 +16,7 @@ using SovietBrowser;
 
 namespace EzClapsBrowser {
   public partial class EzClapsBrowser : Form {
-    //_chromiumWebBrowser.DownloadHandler = new DownloadHandler(); 
-    // need a find a way to use this
-
+    //Homepage
     private string _homePage = "google.nl";
     public DownloadHandler DownloadHandler { get; }
     public EzClapsBrowser() {
@@ -37,22 +35,23 @@ namespace EzClapsBrowser {
       browser.Parent = tabControl.SelectedTab;
       browser.AddressChanged += EzClaps_AddressChanged;
       browser.TitleChanged += EzClaps_TitleChanged;
+      //Creates a new Tab with a browser attached to it also updates the browser tab name and the search bar
       browser.DownloadHandler = new DownloadHandler();
+     //this class makes you able to download files and save them to where you want them to be placed
 
     }
     private void btnSearch_Click(object sender, EventArgs e) {
       ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
       NavigateToNewPage(browser, txtSearchBar.Text);
-
-      using (StreamWriter history = File.AppendText(@"C:\Users\Public\EzClapsBrowser\History.txt")) {
-        history.WriteLine(txtSearchBar.Text);
-      }
+      // uses a textbar to fill in a url and searches it up for you 
+      //causing the browser to update based on what you put in the bar
     }
 
     private void btnHome_Click(object sender, EventArgs e) {
       ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
       txtSearchBar.Text = _homePage;
       NavigateToNewPage(browser, _homePage);
+      //sends you back to the homepage Google.com
     }
 
     private void NavigateToNewPage(ChromiumWebBrowser browser, string url) {
@@ -66,6 +65,7 @@ namespace EzClapsBrowser {
       if (browser != null) {
         if (browser.CanGoBack)
           browser.Back();
+        //going back a tab
       }
     }
 
@@ -77,7 +77,7 @@ namespace EzClapsBrowser {
         if (browser.CanGoForward)
 
           browser.Forward();
-
+        //going forward in a tab
       }
     }
 
@@ -85,26 +85,36 @@ namespace EzClapsBrowser {
       ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
       if (browser != null)
         browser.Reload(true);
+      //refreshes the web page ( also updates the url so if you refresh it wil be added to the History.txt
     }
-
+   
     private void btnNewTab_Click(object sender, EventArgs e) {
       createNewTab();
+      //creates a new tab with a new browser attached
     }
 
     private void EzClaps_AddressChanged(object sender, AddressChangedEventArgs e) {
+      //updates the adress bar based on the url that has been  put in
       this.Invoke(new MethodInvoker(() => {
         txtSearchBar.Text = e.Address;
+        //if the the adressbar is updated in one way or another it wil detect it and send the url to the History.txt file
+        // causing the history tab to update 
+        using (StreamWriter history = File.AppendText(@"C:\Users\Public\EzClapsBrowser\History.txt")) {
+          history.WriteLine(txtSearchBar.Text);
+        }
       }));
     }
     private void EzClaps_TitleChanged(object sender, TitleChangedEventArgs e) {
       this.Invoke(new MethodInvoker(() => {
         tabControl.SelectedTab.Text = e.Title;
       }));
+      //updates the title of the tab
     }
 
     private void btnRemoveTab_Click(object sender, EventArgs e) {
       if (tabControl.TabPages.Count == 0) {
         return;
+        //removes a tab when clicked
       }
 
       var tabIndex = tabControl.SelectedIndex;
@@ -124,15 +134,14 @@ namespace EzClapsBrowser {
 
 
 
-      //*FIXED* TODO: fix bug when you remove the first tab (it will not select the other tab)
+      
       tabControl.SelectedIndex = tabIndex - 1;
 
       if (tabControl.TabPages.Count == 0) {
 
       }
     }
-    // *Fixed* Create method that you can reuse to create a new browser 
-    // and add it to a TabPage
+    //adds a new tab a gives it a browser using the InitializeChronium(newTabPage) method
     private void createNewTab() {
       TabPage newTabPage = new TabPage();
       newTabPage.Text = "New tab";
@@ -141,21 +150,22 @@ namespace EzClapsBrowser {
       InitializeChromium(newTabPage);
     }
 
-
-    private void SovietBrowser_FormClosing(object sender, FormClosingEventArgs e) {
+    //safly lets you shutdown the browser
+    private void EzClapsBrowser_FormClosing(object sender, FormClosingEventArgs e) {
       Cef.Shutdown();
     }
 
     private void btnMenu_Click(object sender, EventArgs e) {
       CtxMenu.Show(MousePosition);
+      //opens the contextbrowser menu and opens it on your mouse position uwu
     }
-
+    //adds a tab and giving it a brower ( inside a context browser version ) 
     private void ctxAddtab_Click(object sender, EventArgs e) {
       createNewTab();
     }
 
     private void menuToolStripMenuItem_Click(object sender, EventArgs e) {
-
+      //opens a winform with your history in it
       showHistory showhistory = new showHistory();
       showhistory.Show();
     }
