@@ -14,11 +14,11 @@ namespace SovietBrowser {
     public showHistory() {
       InitializeComponent();
       
-      var path = (@"C:\Users\Stefano\AppData\Local\EzClapsBrowser\History.txt");
+      var path = (@"C:\Users\Public\EzClapsBrowser\History.txt");
       //looks if the history.txt file exists
       if (!File.Exists(path)) {
         //path doesnt exist yet so we create one uwu
-        string root = @"C:\Users\Stefano\AppData\Local\EzClapsBrowser";
+        string root = @"C:\Users\Public\EzClapsBrowser";
         //Looks up if the Folder exists 
         if (!Directory.Exists(root)) {
           //doesnt exist so we make one based on the root directory
