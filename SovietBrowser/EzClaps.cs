@@ -44,7 +44,7 @@ namespace EzClapsBrowser {
       ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
       NavigateToNewPage(browser, txtSearchBar.Text);
 
-      using (StreamWriter history = File.AppendText(@"C:\History\History.txt")) {
+      using (StreamWriter history = File.AppendText(@"C:\Users\Stefano\AppData\Local\EzClapsBrowser\History.txt")) {
         history.WriteLine(txtSearchBar.Text);
       }
     }

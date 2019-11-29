@@ -13,9 +13,17 @@ namespace SovietBrowser {
   public partial class showHistory : Form {
     public showHistory() {
       InitializeComponent();
-      var path = (@"C:\History\History.txt");
-      string content = File.ReadAllText(path);
-      txtHistory.Text = content;
+      var path = (@"C:\Users\Stefano\AppData\Local\EzClapsBrowser\History.txt");
+      if (!File.Exists(path)) {
+        string root = @"C:\Users\Stefano\AppData\Local\EzClapsBrowser";
+        if (!Directory.Exists(root)) {
+          Directory.CreateDirectory(root);
+          File.Create(path);
+        }
+      } else {
+        string content = File.ReadAllText(path);
+        txtHistory.Text = content;
+      }
     }
   }
 }
