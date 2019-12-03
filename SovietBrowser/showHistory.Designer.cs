@@ -34,14 +34,14 @@
       this.txtHistory.Name = "txtHistory";
       this.txtHistory.ReadOnly = true;
       this.txtHistory.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.txtHistory.Size = new System.Drawing.Size(702, 1087);
+      this.txtHistory.Size = new System.Drawing.Size(702, 1121);
       this.txtHistory.TabIndex = 0;
       // 
       // showHistory
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(727, 1112);
+      this.ClientSize = new System.Drawing.Size(727, 1146);
       this.Controls.Add(this.txtHistory);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "showHistory";

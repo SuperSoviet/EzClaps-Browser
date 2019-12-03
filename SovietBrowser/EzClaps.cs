@@ -37,7 +37,7 @@ namespace EzClapsBrowser {
       browser.TitleChanged += EzClaps_TitleChanged;
       //Creates a new Tab with a browser attached to it also updates the browser tab name and the search bar
       browser.DownloadHandler = new DownloadHandler();
-     //this class makes you able to download files and save them to where you want them to be placed
+      //this class makes you able to download files and save them to where you want them to be placed
 
     }
     private void btnSearch_Click(object sender, EventArgs e) {
@@ -87,7 +87,7 @@ namespace EzClapsBrowser {
         browser.Reload(true);
       //refreshes the web page ( also updates the url so if you refresh it wil be added to the History.txt
     }
-   
+
     private void btnNewTab_Click(object sender, EventArgs e) {
       createNewTab();
       //creates a new tab with a new browser attached
@@ -99,6 +99,10 @@ namespace EzClapsBrowser {
         txtSearchBar.Text = e.Address;
         //if the the adressbar is updated in one way or another it wil detect it and send the url to the History.txt file
         // causing the history tab to update 
+        //but if the Private tab is active it won't save your browser history 
+        if (cbPrivateTab.Checked) {
+          return;
+        }
         using (StreamWriter history = File.AppendText(@"C:\Users\Public\EzClapsBrowser\History.txt")) {
           history.WriteLine(txtSearchBar.Text);
         }
@@ -133,8 +137,8 @@ namespace EzClapsBrowser {
 
 
 
+      //Pssst hey :)
 
-      
       tabControl.SelectedIndex = tabIndex - 1;
 
       if (tabControl.TabPages.Count == 0) {
@@ -168,6 +172,10 @@ namespace EzClapsBrowser {
       //opens a winform with your history in it
       showHistory showhistory = new showHistory();
       showhistory.Show();
+    }
+
+    private void cbPrivateTab_CheckedChanged(object sender, EventArgs e) {
+
     }
   }
 }

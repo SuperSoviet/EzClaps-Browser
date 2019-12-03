@@ -40,6 +40,7 @@
       this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.ctxAddtab = new System.Windows.Forms.ToolStripMenuItem();
       this.btnMenu = new System.Windows.Forms.Button();
+      this.cbPrivateTab = new System.Windows.Forms.CheckBox();
       this.pnlWebView.SuspendLayout();
       this.tabControl.SuspendLayout();
       this.CtxMenu.SuspendLayout();
@@ -165,19 +166,19 @@
             this.menuToolStripMenuItem,
             this.ctxAddtab});
       this.CtxMenu.Name = "CtxMenu";
-      this.CtxMenu.Size = new System.Drawing.Size(181, 70);
+      this.CtxMenu.Size = new System.Drawing.Size(142, 48);
       // 
       // menuToolStripMenuItem
       // 
       this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-      this.menuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.menuToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
       this.menuToolStripMenuItem.Text = "History";
       this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
       // 
       // ctxAddtab
       // 
       this.ctxAddtab.Name = "ctxAddtab";
-      this.ctxAddtab.Size = new System.Drawing.Size(180, 22);
+      this.ctxAddtab.Size = new System.Drawing.Size(141, 22);
       this.ctxAddtab.Text = "Add new tab";
       this.ctxAddtab.Click += new System.EventHandler(this.ctxAddtab_Click);
       // 
@@ -191,6 +192,17 @@
       this.btnMenu.UseVisualStyleBackColor = true;
       this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
       // 
+      // cbPrivateTab
+      // 
+      this.cbPrivateTab.AutoSize = true;
+      this.cbPrivateTab.Location = new System.Drawing.Point(1402, 7);
+      this.cbPrivateTab.Name = "cbPrivateTab";
+      this.cbPrivateTab.Size = new System.Drawing.Size(126, 17);
+      this.cbPrivateTab.TabIndex = 10;
+      this.cbPrivateTab.Text = "Turn on Private Tabs";
+      this.cbPrivateTab.UseVisualStyleBackColor = true;
+      this.cbPrivateTab.CheckedChanged += new System.EventHandler(this.cbPrivateTab_CheckedChanged);
+      // 
       // EzClapsBrowser
       // 
       this.AcceptButton = this.btnSearch;
@@ -198,6 +210,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1568, 1146);
       this.ContextMenuStrip = this.CtxMenu;
+      this.Controls.Add(this.cbPrivateTab);
       this.Controls.Add(this.btnMenu);
       this.Controls.Add(this.btnRemoveTab);
       this.Controls.Add(this.btnNewTab);
@@ -238,6 +251,7 @@
     private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem ctxAddtab;
     private System.Windows.Forms.Button btnMenu;
+    private System.Windows.Forms.CheckBox cbPrivateTab;
   }
 }
 
