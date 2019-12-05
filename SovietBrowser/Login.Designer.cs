@@ -70,7 +70,7 @@
       // 
       // btnLogin
       // 
-      this.btnLogin.Location = new System.Drawing.Point(154, 226);
+      this.btnLogin.Location = new System.Drawing.Point(152, 222);
       this.btnLogin.Name = "btnLogin";
       this.btnLogin.Size = new System.Drawing.Size(75, 23);
       this.btnLogin.TabIndex = 4;
@@ -82,9 +82,9 @@
       // 
       this.pictureBox1.Image = global::EzClapsBrowser.Properties.Resources.images;
       this.pictureBox1.InitialImage = global::EzClapsBrowser.Properties.Resources.images;
-      this.pictureBox1.Location = new System.Drawing.Point(36, 12);
+      this.pictureBox1.Location = new System.Drawing.Point(32, 12);
       this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.Size = new System.Drawing.Size(301, 136);
+      this.pictureBox1.Size = new System.Drawing.Size(294, 136);
       this.pictureBox1.TabIndex = 6;
       this.pictureBox1.TabStop = false;
       // 
@@ -92,13 +92,14 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(358, 261);
+      this.ClientSize = new System.Drawing.Size(354, 257);
       this.Controls.Add(this.pictureBox1);
       this.Controls.Add(this.btnLogin);
       this.Controls.Add(this.txtPassword);
       this.Controls.Add(this.txtUsername);
       this.Controls.Add(this.lblPassword);
       this.Controls.Add(this.lblUsername);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MaximizeBox = false;
       this.MaximumSize = new System.Drawing.Size(374, 300);
