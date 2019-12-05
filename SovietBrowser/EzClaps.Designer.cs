@@ -39,6 +39,8 @@
       this.CtxMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.ctxAddtab = new System.Windows.Forms.ToolStripMenuItem();
+      this.ctxSwitchTheme = new System.Windows.Forms.ToolStripMenuItem();
+      this.ctxDarkTheme = new System.Windows.Forms.ToolStripMenuItem();
       this.btnMenu = new System.Windows.Forms.Button();
       this.cbPrivateTab = new System.Windows.Forms.CheckBox();
       this.pnlWebView.SuspendLayout();
@@ -139,6 +141,7 @@
       this.btnRefresh.Text = "↺";
       this.btnRefresh.UseVisualStyleBackColor = true;
       this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+      this.btnRefresh.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnRefresh_KeyDown);
       // 
       // btnNewTab
       // 
@@ -164,32 +167,49 @@
       // 
       this.CtxMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem,
-            this.ctxAddtab});
+            this.ctxAddtab,
+            this.ctxSwitchTheme});
       this.CtxMenu.Name = "CtxMenu";
-      this.CtxMenu.Size = new System.Drawing.Size(142, 48);
+      this.CtxMenu.Size = new System.Drawing.Size(154, 70);
       // 
       // menuToolStripMenuItem
       // 
       this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-      this.menuToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+      this.menuToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
       this.menuToolStripMenuItem.Text = "History";
       this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
       // 
       // ctxAddtab
       // 
       this.ctxAddtab.Name = "ctxAddtab";
-      this.ctxAddtab.Size = new System.Drawing.Size(141, 22);
+      this.ctxAddtab.Size = new System.Drawing.Size(153, 22);
       this.ctxAddtab.Text = "Add new tab";
       this.ctxAddtab.Click += new System.EventHandler(this.ctxAddtab_Click);
       // 
+      // ctxSwitchTheme
+      // 
+      this.ctxSwitchTheme.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ctxDarkTheme});
+      this.ctxSwitchTheme.Name = "ctxSwitchTheme";
+      this.ctxSwitchTheme.Size = new System.Drawing.Size(153, 22);
+      this.ctxSwitchTheme.Text = "Switch Themes";
+      // 
+      // ctxDarkTheme
+      // 
+      this.ctxDarkTheme.Name = "ctxDarkTheme";
+      this.ctxDarkTheme.Size = new System.Drawing.Size(137, 22);
+      this.ctxDarkTheme.Text = "Dark Theme";
+      this.ctxDarkTheme.Click += new System.EventHandler(this.ctxDarkTheme_Click);
+      // 
       // btnMenu
       // 
+      this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(121)))), ((int)(((byte)(26)))));
       this.btnMenu.Location = new System.Drawing.Point(1534, 5);
       this.btnMenu.Name = "btnMenu";
       this.btnMenu.Size = new System.Drawing.Size(34, 20);
       this.btnMenu.TabIndex = 9;
       this.btnMenu.Text = "⭿";
-      this.btnMenu.UseVisualStyleBackColor = true;
+      this.btnMenu.UseVisualStyleBackColor = false;
       this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
       // 
       // cbPrivateTab
@@ -208,7 +228,7 @@
       this.AcceptButton = this.btnSearch;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.BackColor = System.Drawing.SystemColors.ControlLight;
+      this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
       this.ClientSize = new System.Drawing.Size(1568, 1146);
       this.ContextMenuStrip = this.CtxMenu;
       this.Controls.Add(this.cbPrivateTab);
@@ -225,6 +245,7 @@
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Margin = new System.Windows.Forms.Padding(2);
       this.Name = "EzClapsBrowser";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "EzClaps Browser";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EzClapsBrowser_FormClosing);
       this.pnlWebView.ResumeLayout(false);
@@ -253,6 +274,8 @@
     private System.Windows.Forms.ToolStripMenuItem ctxAddtab;
     private System.Windows.Forms.Button btnMenu;
     private System.Windows.Forms.CheckBox cbPrivateTab;
+    private System.Windows.Forms.ToolStripMenuItem ctxSwitchTheme;
+    private System.Windows.Forms.ToolStripMenuItem ctxDarkTheme;
   }
 }
 

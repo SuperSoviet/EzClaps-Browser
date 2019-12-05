@@ -82,12 +82,14 @@ namespace EzClapsBrowser {
     }
 
     private void btnRefresh_Click(object sender, EventArgs e) {
-      ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
+      ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;  
       if (browser != null)
         browser.Reload(true);
       //refreshes the web page ( also updates the url so if you refresh it wil be added to the History.txt
+      if(browser == null) {
+        browser.Reload(false);
+      } 
     }
-
     private void btnNewTab_Click(object sender, EventArgs e) {
       createNewTab();
       //creates a new tab with a new browser attached
@@ -174,10 +176,34 @@ namespace EzClapsBrowser {
       showHistory showhistory = new showHistory();
       showhistory.Show();
     }
-    
+
 
     private void cbPrivateTab_CheckedChanged(object sender, EventArgs e) {
 
     }
+
+    private void ctxDarkTheme_Click(object sender, EventArgs e) {
+      this.BackColor = Color.FromArgb(93, 91, 90);
+      CtxMenu.BackColor = Color.FromArgb(105, 105, 105);
+      btnBack.BackColor = Color.FromArgb(105, 105, 105);
+      btnForward.BackColor = Color.FromArgb(105, 105, 105);
+      btnHome.BackColor = Color.FromArgb(105, 105, 105);
+      btnNewTab.BackColor = Color.FromArgb(105, 105, 105);
+      btnRemoveTab.BackColor = Color.FromArgb(105, 105, 105);
+      btnMenu.BackColor = Color.FromArgb(105, 105, 105);
+      btnRefresh.BackColor = Color.FromArgb(105, 105, 105);
+      txtSearchBar.BackColor = Color.FromArgb(105, 105, 105);
+      btnSearch.BackColor = Color.FromArgb(105, 105, 105);
+      txtSearchBar.ForeColor = Color.White;
+      tabPage1.BackColor = Color.FromArgb(105, 105, 105);
+
+    }
+
+    private void btnRefresh_KeyDown(object sender, KeyEventArgs e) {
+      if (e.KeyCode == Keys.F5) {
+        btnRefresh.PerformClick();
+      }
+    }
   }
 }
+  

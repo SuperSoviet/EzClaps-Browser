@@ -35,12 +35,12 @@
       this.txtHistory.Name = "txtHistory";
       this.txtHistory.ReadOnly = true;
       this.txtHistory.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.txtHistory.Size = new System.Drawing.Size(702, 1121);
+      this.txtHistory.Size = new System.Drawing.Size(702, 742);
       this.txtHistory.TabIndex = 0;
       // 
       // btnClear
       // 
-      this.btnClear.Location = new System.Drawing.Point(12, 1121);
+      this.btnClear.Location = new System.Drawing.Point(13, 761);
       this.btnClear.Name = "btnClear";
       this.btnClear.Size = new System.Drawing.Size(75, 23);
       this.btnClear.TabIndex = 1;
@@ -52,7 +52,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(727, 1146);
+      this.ClientSize = new System.Drawing.Size(727, 808);
       this.Controls.Add(this.btnClear);
       this.Controls.Add(this.txtHistory);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
