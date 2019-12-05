@@ -41,12 +41,14 @@ namespace EzClapsBrowser {
       txtPassword.UseSystemPasswordChar = true;
     }
     private void txtPassword_KeyDown(object sender, KeyEventArgs e) {
+      //you can use enter to use the login button
       if (e.KeyCode == Keys.Enter) {
         btnLogin_Click(this, new EventArgs());
       }
     }
 
     private void txtUsername_KeyDown(object sender, KeyEventArgs e) {
+      //you can use enter to use the login button
       if (e.KeyCode == Keys.Enter) {
         btnLogin_Click(this, new EventArgs());
       }
