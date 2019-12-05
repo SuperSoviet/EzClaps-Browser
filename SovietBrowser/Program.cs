@@ -1,5 +1,6 @@
 ﻿using CefSharp;
 using CefSharp.WinForms;
+using EzClapsBrowser;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace EzClapsBrowser {
       Cef.Initialize(settings);
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new EzClapsBrowser());
+      Application.Run(new Login());
     }
   }
 }

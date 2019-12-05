@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace SovietBrowser {
+namespace EzClapsBrowser {
   public partial class showHistory : Form {
     public showHistory() {
       InitializeComponent();

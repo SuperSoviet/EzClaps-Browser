@@ -1,5 +1,5 @@
 ﻿namespace EzClapsBrowser {
-  partial class EzClapsBrowser {
+  public partial class EzClapsBrowser {
     /// <summary>
     /// Required designer variable.
     /// </summary>

@@ -1,4 +1,4 @@
-﻿namespace SovietBrowser {
+﻿namespace EzClapsBrowser {
   partial class showHistory {
     /// <summary>
     /// Required designer variable.

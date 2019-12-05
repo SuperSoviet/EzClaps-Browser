@@ -12,7 +12,6 @@ using CefSharp.WinForms;
 using CefSharp.Example;
 using CefSharp.Example.Handlers;
 using System.IO;
-using SovietBrowser;
 
 namespace EzClapsBrowser {
   public partial class EzClapsBrowser : Form {
@@ -20,9 +19,10 @@ namespace EzClapsBrowser {
     private string _homePage = "google.nl";
     public DownloadHandler DownloadHandler { get; }
     public EzClapsBrowser() {
-      InitializeComponent();
 
       if (DesignMode) return;
+      InitializeComponent();
+
 
       InitializeChromium(tabPage1);
     }

@@ -1,4 +1,4 @@
-﻿namespace SovietBrowser {
+﻿namespace EzClapsBrowser {
   partial class Login {
     /// <summary>
     /// Required designer variable.
@@ -95,7 +95,12 @@
       this.Controls.Add(this.lblPassword);
       this.Controls.Add(this.lblUsername);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+      this.MaximizeBox = false;
+      this.MaximumSize = new System.Drawing.Size(374, 300);
+      this.MinimizeBox = false;
+      this.MinimumSize = new System.Drawing.Size(374, 300);
       this.Name = "Login";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Login";
       this.ResumeLayout(false);
       this.PerformLayout();
