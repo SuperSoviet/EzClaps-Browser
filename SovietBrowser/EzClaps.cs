@@ -156,7 +156,8 @@ namespace EzClapsBrowser {
 
     //safly lets you shutdown the browser
     private void EzClapsBrowser_FormClosing(object sender, FormClosingEventArgs e) {
-      Cef.Shutdown();
+    
+      Application.ExitThread();
     }
 
     private void btnMenu_Click(object sender, EventArgs e) {
@@ -173,6 +174,7 @@ namespace EzClapsBrowser {
       showHistory showhistory = new showHistory();
       showhistory.Show();
     }
+    
 
     private void cbPrivateTab_CheckedChanged(object sender, EventArgs e) {
 
