@@ -32,7 +32,7 @@ namespace EzClapsBrowser {
 
       } else {
         //otherwise it opens a MessageBox telling you its the wrong login
-        MessageBox.Show("Wrong login, if you want to reset it go to my Discord EzClaps Den and contact me");
+        MessageBox.Show("Wrong login, if you wish to reset it or get a login go to my Discord EzClaps Den and contact me");
       }
     }
     private void txtPassword_TextChanged(object sender, EventArgs e) {
