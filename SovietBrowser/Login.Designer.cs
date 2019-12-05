@@ -30,6 +30,8 @@
       this.txtPassword = new System.Windows.Forms.TextBox();
       this.btnLogin = new System.Windows.Forms.Button();
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
+      this.lblRegister = new System.Windows.Forms.LinkLabel();
+      this.lblOr = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
@@ -88,11 +90,33 @@
       this.pictureBox1.TabIndex = 6;
       this.pictureBox1.TabStop = false;
       // 
+      // lblRegister
+      // 
+      this.lblRegister.AutoSize = true;
+      this.lblRegister.Location = new System.Drawing.Point(291, 227);
+      this.lblRegister.Name = "lblRegister";
+      this.lblRegister.Size = new System.Drawing.Size(46, 13);
+      this.lblRegister.TabIndex = 7;
+      this.lblRegister.TabStop = true;
+      this.lblRegister.Text = "Register";
+      this.lblRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblRegister_LinkClicked);
+      // 
+      // lblOr
+      // 
+      this.lblOr.AutoSize = true;
+      this.lblOr.Location = new System.Drawing.Point(250, 227);
+      this.lblOr.Name = "lblOr";
+      this.lblOr.Size = new System.Drawing.Size(18, 13);
+      this.lblOr.TabIndex = 8;
+      this.lblOr.Text = "Or";
+      // 
       // Login
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(354, 257);
+      this.Controls.Add(this.lblOr);
+      this.Controls.Add(this.lblRegister);
       this.Controls.Add(this.pictureBox1);
       this.Controls.Add(this.btnLogin);
       this.Controls.Add(this.txtPassword);
@@ -122,5 +146,7 @@
     private System.Windows.Forms.TextBox txtPassword;
     private System.Windows.Forms.Button btnLogin;
     private System.Windows.Forms.PictureBox pictureBox1;
+    private System.Windows.Forms.LinkLabel lblRegister;
+    private System.Windows.Forms.Label lblOr;
   }
 }

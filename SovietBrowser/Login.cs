@@ -52,6 +52,11 @@ namespace EzClapsBrowser {
         btnLogin_Click(this, new EventArgs());
       }
     }
+
+    private void lblRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+      Register register = new Register();
+      register.Show();
+    }
   }
 }
 
