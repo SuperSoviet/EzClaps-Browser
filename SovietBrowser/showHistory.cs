@@ -34,6 +34,15 @@ namespace EzClapsBrowser {
         
       }
     }
+
+    private void btnClear_Click(object sender, EventArgs e) {
+      string path = @"C:\Users\Public\EzClapsBrowser\History.txt";
+      if (File.Exists(path)) {
+        File.Delete(path);
+        txtHistory.Clear();
+        txtHistory.Refresh();
+      }
+    }
   }
 }
 
