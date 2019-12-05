@@ -57,6 +57,7 @@
       this.txtUsername.Name = "txtUsername";
       this.txtUsername.Size = new System.Drawing.Size(242, 20);
       this.txtUsername.TabIndex = 2;
+      this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
       // 
       // txtPassword
       // 
@@ -65,6 +66,7 @@
       this.txtPassword.Size = new System.Drawing.Size(242, 20);
       this.txtPassword.TabIndex = 3;
       this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+      this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
       // 
       // btnLogin
       // 
