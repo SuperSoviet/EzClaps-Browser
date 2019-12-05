@@ -19,7 +19,6 @@ namespace EzClapsBrowser {
     string[] usernames = { "admin", "moderator" };
     string[] passwords = { "100%Koffie", "bubugamer" };
 
-
     private void btnLogin_Click(object sender, EventArgs e) {
       //the moment you click the button login it checks if your logins are correct
       if (usernames.Contains(txtUsername.Text)
