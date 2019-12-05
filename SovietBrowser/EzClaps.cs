@@ -156,7 +156,7 @@ namespace EzClapsBrowser {
 
     //safly lets you shutdown the browser
     private void EzClapsBrowser_FormClosing(object sender, FormClosingEventArgs e) {
-    
+
       Application.ExitThread();
     }
 

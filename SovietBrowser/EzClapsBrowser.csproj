@@ -134,5 +134,35 @@
       <Version>2.7.0.7</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-logo-web-transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\member-login-icon-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_label_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %283%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
