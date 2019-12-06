@@ -27,7 +27,8 @@ namespace EzClapsBrowser {
     }
     // " private void inintializeChromium  = Method
     private void InitializeChromium(TabPage anyTabPage) { //(TabPage anyTabPage) =  Arguments
-
+      CefSettings settings = new CefSettings();
+      settings.CachePath = @"C:\Users\Public\EzClapsBrowser\Cache.txt";
       var browser = new ChromiumWebBrowser(_homePage);
       browser.Dock = DockStyle.Fill;
       anyTabPage.Controls.Add(browser);
