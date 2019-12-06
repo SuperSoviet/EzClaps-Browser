@@ -33,7 +33,7 @@
       this.ClientSize = new System.Drawing.Size(800, 828);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "Register";
-      this.Text = "Register";
+      this.Text = "Contact us";
       this.ResumeLayout(false);
 
     }

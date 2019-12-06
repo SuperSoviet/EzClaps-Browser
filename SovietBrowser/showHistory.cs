@@ -31,7 +31,6 @@ namespace EzClapsBrowser {
         //write out the file and whats inside
         string content = File.ReadAllText(path);
         txtHistory.Text = content;
-        
       }
     }
 
