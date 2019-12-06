@@ -23,7 +23,6 @@ namespace EzClapsBrowser {
       if (DesignMode) return;
       InitializeComponent();
 
-
       InitializeChromium(tabPage1);
     }
     // " private void inintializeChromium  = Method
@@ -197,12 +196,6 @@ namespace EzClapsBrowser {
       txtSearchBar.ForeColor = Color.White;
       tabPage1.BackColor = Color.FromArgb(105, 105, 105);
 
-    }
-
-    private void btnRefresh_KeyDown(object sender, KeyEventArgs e) {
-      if (e.KeyCode == Keys.F5) {
-        btnRefresh_Click("", e);
-      }
     }
   }
 }
