@@ -82,13 +82,13 @@ namespace EzClapsBrowser {
     }
 
     private void btnRefresh_Click(object sender, EventArgs e) {
-      ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;  
+      ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
       if (browser != null)
         browser.Reload(true);
       //refreshes the web page ( also updates the url so if you refresh it wil be added to the History.txt
-      if(browser == null) {
+      if (browser == null) {
         browser.Reload(false);
-      } 
+      }
     }
     private void btnNewTab_Click(object sender, EventArgs e) {
       createNewTab();
@@ -144,66 +144,66 @@ namespace EzClapsBrowser {
       tabControl.SelectedIndex = tabIndex - 1;
 
       if (tabControl.TabPages.Count == 0) {
+        Application.Exit();
+      }
+    } 
+        //adds a new tab a gives it a browser using the InitializeChronium(newTabPage) method
+        private void createNewTab() {
+          TabPage newTabPage = new TabPage();
+          newTabPage.Text = "New tab";
+          tabControl.Controls.Add(newTabPage);
+          tabControl.SelectTab(tabControl.TabCount - 1);
+          InitializeChromium(newTabPage);
+        }
 
+        //safly lets you shutdown the browser
+        private void EzClapsBrowser_FormClosing(object sender, FormClosingEventArgs e) {
+
+          Application.ExitThread();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e) {
+          CtxMenu.Show(MousePosition);
+          //opens the contextbrowser menu and opens it on your mouse position 
+        }
+        //adds a tab and giving it a brower ( inside a context browser version ) 
+        private void ctxAddtab_Click(object sender, EventArgs e) {
+          createNewTab();
+        }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e) {
+          //opens a winform with your history in it
+          showHistory showhistory = new showHistory();
+          showhistory.Show();
+        }
+
+
+        private void cbPrivateTab_CheckedChanged(object sender, EventArgs e) {
+
+        }
+
+        private void ctxDarkTheme_Click(object sender, EventArgs e) {
+          this.BackColor = Color.FromArgb(93, 91, 90);
+          CtxMenu.BackColor = Color.FromArgb(105, 105, 105);
+          btnBack.BackColor = Color.FromArgb(105, 105, 105);
+          btnForward.BackColor = Color.FromArgb(105, 105, 105);
+          btnHome.BackColor = Color.FromArgb(105, 105, 105);
+          btnNewTab.BackColor = Color.FromArgb(105, 105, 105);
+          btnRemoveTab.BackColor = Color.FromArgb(105, 105, 105);
+          btnMenu.BackColor = Color.FromArgb(105, 105, 105);
+          btnRefresh.BackColor = Color.FromArgb(105, 105, 105);
+          txtSearchBar.BackColor = Color.FromArgb(105, 105, 105);
+          btnSearch.BackColor = Color.FromArgb(105, 105, 105);
+          txtSearchBar.ForeColor = Color.White;
+          tabPage1.BackColor = Color.FromArgb(105, 105, 105);
+
+        }
+
+        private void btnRefresh_KeyDown(object sender, KeyEventArgs e) {
+
+        }
       }
     }
-    //adds a new tab a gives it a browser using the InitializeChronium(newTabPage) method
-    private void createNewTab() {
-      TabPage newTabPage = new TabPage();
-      newTabPage.Text = "New tab";
-      tabControl.Controls.Add(newTabPage);
-      tabControl.SelectTab(tabControl.TabCount - 1);
-      InitializeChromium(newTabPage);
-    }
-
-    //safly lets you shutdown the browser
-    private void EzClapsBrowser_FormClosing(object sender, FormClosingEventArgs e) {
-
-      Application.ExitThread();
-    }
-
-    private void btnMenu_Click(object sender, EventArgs e) {
-      CtxMenu.Show(MousePosition);
-      //opens the contextbrowser menu and opens it on your mouse position uwu
-    }
-    //adds a tab and giving it a brower ( inside a context browser version ) 
-    private void ctxAddtab_Click(object sender, EventArgs e) {
-      createNewTab();
-    }
-
-    private void menuToolStripMenuItem_Click(object sender, EventArgs e) {
-      //opens a winform with your history in it
-      showHistory showhistory = new showHistory();
-      showhistory.Show();
-    }
 
 
-    private void cbPrivateTab_CheckedChanged(object sender, EventArgs e) {
 
-    }
-
-    private void ctxDarkTheme_Click(object sender, EventArgs e) {
-      this.BackColor = Color.FromArgb(93, 91, 90);
-      CtxMenu.BackColor = Color.FromArgb(105, 105, 105);
-      btnBack.BackColor = Color.FromArgb(105, 105, 105);
-      btnForward.BackColor = Color.FromArgb(105, 105, 105);
-      btnHome.BackColor = Color.FromArgb(105, 105, 105);
-      btnNewTab.BackColor = Color.FromArgb(105, 105, 105);
-      btnRemoveTab.BackColor = Color.FromArgb(105, 105, 105);
-      btnMenu.BackColor = Color.FromArgb(105, 105, 105);
-      btnRefresh.BackColor = Color.FromArgb(105, 105, 105);
-      txtSearchBar.BackColor = Color.FromArgb(105, 105, 105);
-      btnSearch.BackColor = Color.FromArgb(105, 105, 105);
-      txtSearchBar.ForeColor = Color.White;
-      tabPage1.BackColor = Color.FromArgb(105, 105, 105);
-
-    }
-
-    private void btnRefresh_KeyDown(object sender, KeyEventArgs e) {
-      if (e.KeyCode == Keys.F5) {
-        btnRefresh.PerformClick();
-      }
-    }
-  }
-}
-  
