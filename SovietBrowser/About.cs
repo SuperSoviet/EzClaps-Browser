@@ -19,5 +19,9 @@ namespace EzClapsBrowser {
       Register discord = new Register();
       discord.Show();
     }
+
+    private void pbMyLogo_Click(object sender, EventArgs e) {
+      MessageBox.Show("^_^");
+    }
   }
 }

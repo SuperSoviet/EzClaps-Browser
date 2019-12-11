@@ -39,6 +39,7 @@
       this.pbMyLogo.Size = new System.Drawing.Size(76, 73);
       this.pbMyLogo.TabIndex = 0;
       this.pbMyLogo.TabStop = false;
+      this.pbMyLogo.Click += new System.EventHandler(this.pbMyLogo_Click);
       // 
       // label1
       // 
