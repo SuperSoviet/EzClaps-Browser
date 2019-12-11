@@ -28,7 +28,7 @@ namespace EzClapsBrowser {
     // " private void inintializeChromium  = Method
     private void InitializeChromium(TabPage anyTabPage) { //(TabPage anyTabPage) =  Arguments
       CefSettings settings = new CefSettings();
-      settings.CachePath = @"C:\Users\Public\EzClapsBrowser\Cache.txt";
+      settings.CachePath = @"C:\Program Files\EzClapsBrowser\Cache.txt";
       var browser = new ChromiumWebBrowser(_homePage);
       browser.Dock = DockStyle.Fill;
       anyTabPage.Controls.Add(browser);
@@ -98,15 +98,16 @@ namespace EzClapsBrowser {
     private void EzClaps_AddressChanged(object sender, AddressChangedEventArgs e) {
       //updates the adress bar based on the url that has been  put in
       this.Invoke(new MethodInvoker(() => {
-        txtSearchBar.Text = e.Address;
-        //if the the adressbar is updated in one way or another it wil detect it and send the url to the History.txt file
-        // causing the history tab to update 
-        //but if the Private tab is active it won't save your browser history 
-        if (cbPrivateTab.Checked) {
-          return;
-        }
-        using (StreamWriter history = File.AppendText(@"C:\Users\Public\EzClapsBrowser\History.txt")) {
-          history.WriteLine(txtSearchBar.Text);
+      txtSearchBar.Text = e.Address;
+      //if the the adressbar is updated in one way or another it wil detect it and send the url to the History.txt file
+      // causing the history tab to update 
+      //but if the Private tab is active it won't save your browser history 
+      if (cbPrivateTab.Checked) {
+        return;
+      }
+        showHistory showHistory = new showHistory();
+        using (StreamWriter History = File.AppendText(@"C:\Program Files\EzClapsBrowser\History.txt")) {
+          History.WriteLine(txtSearchBar.Text);
         }
       }));
     }
