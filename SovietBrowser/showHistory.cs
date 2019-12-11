@@ -35,8 +35,12 @@ namespace EzClapsBrowser {
     }
 
     private void btnClear_Click(object sender, EventArgs e) {
+      //Takes the path
       string path = @"C:\EzClapsBrowser\History.txt";
+      //checks if it exists
       if (File.Exists(path)) {
+        //it exists and since we want to clear it we delete the txt file and refresh the page
+        //the next time you open history it runs the CreateDirectory and Create History.txt again
         File.Delete(path);
         txtHistory.Clear();
         txtHistory.Refresh();

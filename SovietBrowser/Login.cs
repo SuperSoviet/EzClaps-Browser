@@ -56,6 +56,7 @@ namespace EzClapsBrowser {
     }
 
     private void lblRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+      //Sends you to the Register.cs
       Register register = new Register();
       register.Show();
     }

@@ -15,6 +15,7 @@ namespace EzClapsBrowser {
     }
 
     private void lblMyDiscord_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+      //if you press the linklabel you open the Register.cs 
       Register discord = new Register();
       discord.Show();
     }
