@@ -106,7 +106,7 @@ namespace EzClapsBrowser {
         return;
       }
         showHistory showHistory = new showHistory();
-        using (StreamWriter History = File.AppendText(@"C:\Program Files\EzClapsBrowser\History.txt")) {
+        using (StreamWriter History = File.AppendText(@"C:\EzClapsBrowser\History.txt")) {
           History.WriteLine(txtSearchBar.Text);
         }
       }));
