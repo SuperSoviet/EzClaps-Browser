@@ -105,6 +105,7 @@ namespace EzClapsBrowser {
       if (cbPrivateTab.Checked) {
         return;
       }
+      //First checks the location of the history tab then adds the text from the searchbar and adds it in the History.txt
         showHistory showHistory = new showHistory();
         using (StreamWriter History = File.AppendText(@"C:\EzClapsBrowser\History.txt")) {
           History.WriteLine(txtSearchBar.Text);
@@ -170,6 +171,7 @@ namespace EzClapsBrowser {
     //adds a tab and giving it a brower ( inside a context browser version ) 
     private void ctxAddtab_Click(object sender, EventArgs e) {
       createNewTab();
+      //contextmenu version of the add new tab option
     }
 
     private void menuToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -180,10 +182,11 @@ namespace EzClapsBrowser {
 
 
     private void cbPrivateTab_CheckedChanged(object sender, EventArgs e) {
-
+      //if its on your history won't be saved 
     }
 
     private void ctxDarkTheme_Click(object sender, EventArgs e) {
+      //colors for darkmode ( all greyish colors ) 
       this.BackColor = Color.FromArgb(93, 91, 90);
       CtxMenu.BackColor = Color.FromArgb(105, 105, 105);
       btnBack.BackColor = Color.FromArgb(105, 105, 105);
@@ -201,6 +204,7 @@ namespace EzClapsBrowser {
     }
 
     private void aboutEzclapsToolStripMenuItem_Click(object sender, EventArgs e) {
+      //opens the About winform
       About about = new About();
       about.Show();
     }
