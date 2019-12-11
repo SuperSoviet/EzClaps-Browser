@@ -15,9 +15,7 @@ namespace CefSharp.Example.Handlers {
           callback.Continue(downloadItem.SuggestedFileName, showDialog: true);
         }
       }
-
     }
-
     public void OnDownloadUpdated(IWebBrowser chromiumWebBrowser, IBrowser browser, DownloadItem downloadItem, IDownloadItemCallback callback) {
       OnDownloadUpdatedFired?.Invoke(this, downloadItem);
       }
