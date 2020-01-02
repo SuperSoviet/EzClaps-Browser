@@ -28,6 +28,7 @@
       this.label1 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.lblMyDiscord = new System.Windows.Forms.LinkLabel();
+      this.tekstBoxVersion = new System.Windows.Forms.TextBox();
       ((System.ComponentModel.ISupportInitialize)(this.pbMyLogo)).BeginInit();
       this.SuspendLayout();
       // 
@@ -43,13 +44,10 @@
       // 
       // label1
       // 
-      this.label1.AutoSize = true;
-      this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.Location = new System.Drawing.Point(94, 69);
+      this.label1.Location = new System.Drawing.Point(0, 0);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(421, 16);
-      this.label1.TabIndex = 1;
-      this.label1.Text = "Pre-Release Version 0.7 (Version made by : SuperSoviet)";
+      this.label1.Size = new System.Drawing.Size(100, 23);
+      this.label1.TabIndex = 4;
       // 
       // label2
       // 
@@ -72,11 +70,22 @@
       this.lblMyDiscord.Text = "Contact us";
       this.lblMyDiscord.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMyDiscord_LinkClicked);
       // 
+      // tekstBoxVersion
+      // 
+      this.tekstBoxVersion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.tekstBoxVersion.ForeColor = System.Drawing.SystemColors.WindowText;
+      this.tekstBoxVersion.Location = new System.Drawing.Point(94, 54);
+      this.tekstBoxVersion.Name = "tekstBoxVersion";
+      this.tekstBoxVersion.ReadOnly = true;
+      this.tekstBoxVersion.Size = new System.Drawing.Size(411, 13);
+      this.tekstBoxVersion.TabIndex = 5;
+      // 
       // About
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(517, 125);
+      this.Controls.Add(this.tekstBoxVersion);
       this.Controls.Add(this.lblMyDiscord);
       this.Controls.Add(this.label2);
       this.Controls.Add(this.label1);
@@ -87,6 +96,7 @@
       this.Name = "About";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "About";
+      this.Load += new System.EventHandler(this.About_Load);
       ((System.ComponentModel.ISupportInitialize)(this.pbMyLogo)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -99,5 +109,6 @@
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.LinkLabel lblMyDiscord;
+    private System.Windows.Forms.TextBox tekstBoxVersion;
   }
 }

@@ -27,8 +27,8 @@ namespace EzClapsBrowser {
         Array.IndexOf(passwords, txtPassword.Text)) {
         //If the login is correct it will hide the login screen and open the browser form
         this.Hide();
-        EzClapsBrowser form = new EzClapsBrowser();
-        form.ShowDialog();
+        EzClapsBrowser browserForm = new EzClapsBrowser();
+        browserForm.ShowDialog();
 
       } else {
         //otherwise it opens a MessageBox telling you its the wrong login

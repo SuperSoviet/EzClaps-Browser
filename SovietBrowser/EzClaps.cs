@@ -38,7 +38,7 @@ namespace EzClapsBrowser {
       //Creates a new Tab with a browser attached to it also updates the browser tab name and the search bar
       browser.DownloadHandler = new DownloadHandler();
       //this class makes you able to download files and save them to where you want them to be placed
-
+      
     }
     private void btnSearch_Click(object sender, EventArgs e) {
       ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
@@ -138,9 +138,6 @@ namespace EzClapsBrowser {
       tabControl.TabPages.Remove(tabPage);
 
       tabPage.Dispose();
-
-
-
       //Pssst hey :)
 
       tabControl.SelectedIndex = tabIndex - 1;

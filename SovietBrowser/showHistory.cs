@@ -17,11 +17,11 @@ namespace EzClapsBrowser {
       var path = (@"C:\EzClapsBrowser\History.txt");
       //looks if the history.txt file exists
       if (!File.Exists(path)) {
-        //path doesnt exist yet so we create one uwu
+        //path doesn't exist yet so we create one 
         string root = @"C:\EzClapsBrowser";
         //Looks up if the Folder exists 
         if (!Directory.Exists(root)) {
-          //doesnt exist so we make one based on the root directory
+          //doesn't exist so we make one based on the root directory
           Directory.CreateDirectory(root);
           //we also make a new History.txt file ( if the directory doesnt exist then the file wouldnt exist aswel ) 
           File.Create(path);
@@ -33,7 +33,6 @@ namespace EzClapsBrowser {
         txtHistory.Text = content;
       }
     }
-
     private void btnClear_Click(object sender, EventArgs e) {
       //Takes the path
       string path = @"C:\EzClapsBrowser\History.txt";
