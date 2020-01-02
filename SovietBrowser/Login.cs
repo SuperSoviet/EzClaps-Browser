@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Reflection;
 
 namespace EzClapsBrowser {
   public partial class Login : Form {
@@ -59,6 +60,11 @@ namespace EzClapsBrowser {
       //Sends you to the Register.cs
       Register register = new Register();
       register.Show();
+    }
+
+    private void Login_Load(object sender, EventArgs e) {
+      Version version = Assembly.GetExecutingAssembly().GetName().Version;
+      textBoxVersion.Text = "V" + version;
     }
   }
 }

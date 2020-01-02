@@ -32,6 +32,7 @@
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
       this.lblRegister = new System.Windows.Forms.LinkLabel();
       this.lblOr = new System.Windows.Forms.Label();
+      this.textBoxVersion = new System.Windows.Forms.TextBox();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
@@ -110,11 +111,21 @@
       this.lblOr.TabIndex = 8;
       this.lblOr.Text = "Or";
       // 
+      // textBoxVersion
+      // 
+      this.textBoxVersion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.textBoxVersion.Location = new System.Drawing.Point(13, 225);
+      this.textBoxVersion.Name = "textBoxVersion";
+      this.textBoxVersion.ReadOnly = true;
+      this.textBoxVersion.Size = new System.Drawing.Size(100, 13);
+      this.textBoxVersion.TabIndex = 9;
+      // 
       // Login
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(354, 257);
+      this.Controls.Add(this.textBoxVersion);
       this.Controls.Add(this.lblOr);
       this.Controls.Add(this.lblRegister);
       this.Controls.Add(this.pictureBox1);
@@ -132,6 +143,7 @@
       this.Name = "Login";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Login";
+      this.Load += new System.EventHandler(this.Login_Load);
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -148,5 +160,6 @@
     private System.Windows.Forms.PictureBox pictureBox1;
     private System.Windows.Forms.LinkLabel lblRegister;
     private System.Windows.Forms.Label lblOr;
-  }
+        private System.Windows.Forms.TextBox textBoxVersion;
+    }
 }

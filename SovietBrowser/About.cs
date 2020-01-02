@@ -26,7 +26,7 @@ namespace EzClapsBrowser {
 
     private void About_Load(object sender, EventArgs e) {
       Version version = Assembly.GetExecutingAssembly().GetName().Version;
-      tekstBoxVersion.Text = "SovietBrowser version: " + version;
+      tekstBoxVersion.Text = "EzclapsBrowser version: " + version;
     }
   }
 }

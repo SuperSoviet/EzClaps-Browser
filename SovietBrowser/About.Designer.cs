@@ -25,7 +25,6 @@
     private void InitializeComponent() {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
       this.pbMyLogo = new System.Windows.Forms.PictureBox();
-      this.label1 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.lblMyDiscord = new System.Windows.Forms.LinkLabel();
       this.tekstBoxVersion = new System.Windows.Forms.TextBox();
@@ -35,25 +34,18 @@
       // pbMyLogo
       // 
       this.pbMyLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbMyLogo.Image")));
-      this.pbMyLogo.Location = new System.Drawing.Point(12, 12);
+      this.pbMyLogo.Location = new System.Drawing.Point(13, 12);
       this.pbMyLogo.Name = "pbMyLogo";
-      this.pbMyLogo.Size = new System.Drawing.Size(76, 73);
+      this.pbMyLogo.Size = new System.Drawing.Size(76, 71);
       this.pbMyLogo.TabIndex = 0;
       this.pbMyLogo.TabStop = false;
       this.pbMyLogo.Click += new System.EventHandler(this.pbMyLogo_Click);
-      // 
-      // label1
-      // 
-      this.label1.Location = new System.Drawing.Point(0, 0);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(100, 23);
-      this.label1.TabIndex = 4;
       // 
       // label2
       // 
       this.label2.AutoSize = true;
       this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2.Location = new System.Drawing.Point(95, 35);
+      this.label2.Location = new System.Drawing.Point(91, 25);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(134, 16);
       this.label2.TabIndex = 2;
@@ -74,7 +66,7 @@
       // 
       this.tekstBoxVersion.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.tekstBoxVersion.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.tekstBoxVersion.Location = new System.Drawing.Point(94, 54);
+      this.tekstBoxVersion.Location = new System.Drawing.Point(94, 55);
       this.tekstBoxVersion.Name = "tekstBoxVersion";
       this.tekstBoxVersion.ReadOnly = true;
       this.tekstBoxVersion.Size = new System.Drawing.Size(411, 13);
@@ -88,7 +80,6 @@
       this.Controls.Add(this.tekstBoxVersion);
       this.Controls.Add(this.lblMyDiscord);
       this.Controls.Add(this.label2);
-      this.Controls.Add(this.label1);
       this.Controls.Add(this.pbMyLogo);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MaximumSize = new System.Drawing.Size(533, 164);
@@ -106,7 +97,6 @@
     #endregion
 
     private System.Windows.Forms.PictureBox pbMyLogo;
-    private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.LinkLabel lblMyDiscord;
     private System.Windows.Forms.TextBox tekstBoxVersion;
