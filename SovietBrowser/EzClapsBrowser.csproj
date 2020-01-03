@@ -85,6 +85,7 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="CacheHandler.cs" />
     <Compile Include="DownloadHandler.cs" />
     <Compile Include="EzClaps.cs">
       <SubType>Form</SubType>

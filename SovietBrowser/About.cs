@@ -21,10 +21,11 @@ namespace EzClapsBrowser {
       discord.Show();
     }
     private void pbMyLogo_Click(object sender, EventArgs e) {
+      //a secret smile, to make you smile
       MessageBox.Show("^_^");
     }
-
     private void About_Load(object sender, EventArgs e) {
+      //shows Assembly version ( version of the browser ) 
       Version version = Assembly.GetExecutingAssembly().GetName().Version;
       tekstBoxVersion.Text = "EzclapsBrowser version: " + version;
     }

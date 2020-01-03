@@ -41,9 +41,9 @@
       this.ctxAddtab = new System.Windows.Forms.ToolStripMenuItem();
       this.ctxSwitchTheme = new System.Windows.Forms.ToolStripMenuItem();
       this.ctxDarkTheme = new System.Windows.Forms.ToolStripMenuItem();
+      this.aboutEzclapsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.btnMenu = new System.Windows.Forms.Button();
       this.cbPrivateTab = new System.Windows.Forms.CheckBox();
-      this.aboutEzclapsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.pnlWebView.SuspendLayout();
       this.tabControl.SuspendLayout();
       this.CtxMenu.SuspendLayout();
@@ -171,19 +171,19 @@
             this.ctxSwitchTheme,
             this.aboutEzclapsToolStripMenuItem});
       this.CtxMenu.Name = "CtxMenu";
-      this.CtxMenu.Size = new System.Drawing.Size(181, 114);
+      this.CtxMenu.Size = new System.Drawing.Size(154, 92);
       // 
       // menuToolStripMenuItem
       // 
       this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-      this.menuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.menuToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
       this.menuToolStripMenuItem.Text = "History";
       this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
       // 
       // ctxAddtab
       // 
       this.ctxAddtab.Name = "ctxAddtab";
-      this.ctxAddtab.Size = new System.Drawing.Size(180, 22);
+      this.ctxAddtab.Size = new System.Drawing.Size(153, 22);
       this.ctxAddtab.Text = "Add new tab";
       this.ctxAddtab.Click += new System.EventHandler(this.ctxAddtab_Click);
       // 
@@ -192,7 +192,7 @@
       this.ctxSwitchTheme.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctxDarkTheme});
       this.ctxSwitchTheme.Name = "ctxSwitchTheme";
-      this.ctxSwitchTheme.Size = new System.Drawing.Size(180, 22);
+      this.ctxSwitchTheme.Size = new System.Drawing.Size(153, 22);
       this.ctxSwitchTheme.Text = "Switch Themes";
       // 
       // ctxDarkTheme
@@ -201,6 +201,13 @@
       this.ctxDarkTheme.Size = new System.Drawing.Size(137, 22);
       this.ctxDarkTheme.Text = "Dark Theme";
       this.ctxDarkTheme.Click += new System.EventHandler(this.ctxDarkTheme_Click);
+      // 
+      // aboutEzclapsToolStripMenuItem
+      // 
+      this.aboutEzclapsToolStripMenuItem.Name = "aboutEzclapsToolStripMenuItem";
+      this.aboutEzclapsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+      this.aboutEzclapsToolStripMenuItem.Text = "About Ezclaps";
+      this.aboutEzclapsToolStripMenuItem.Click += new System.EventHandler(this.aboutEzclapsToolStripMenuItem_Click);
       // 
       // btnMenu
       // 
@@ -223,13 +230,6 @@
       this.cbPrivateTab.Text = "Turn on Private Tabs";
       this.cbPrivateTab.UseVisualStyleBackColor = true;
       this.cbPrivateTab.CheckedChanged += new System.EventHandler(this.cbPrivateTab_CheckedChanged);
-      // 
-      // aboutEzclapsToolStripMenuItem
-      // 
-      this.aboutEzclapsToolStripMenuItem.Name = "aboutEzclapsToolStripMenuItem";
-      this.aboutEzclapsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-      this.aboutEzclapsToolStripMenuItem.Text = "About Ezclaps";
-      this.aboutEzclapsToolStripMenuItem.Click += new System.EventHandler(this.aboutEzclapsToolStripMenuItem_Click);
       // 
       // EzClapsBrowser
       // 

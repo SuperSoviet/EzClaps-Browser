@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
-using CefSharp.Example;
-using CefSharp.Example.Handlers;
+using ezclapsDownloadHandler;
 using System.IO;
+
+
 
 namespace EzClapsBrowser {
   public partial class EzClapsBrowser : Form {
@@ -22,22 +23,28 @@ namespace EzClapsBrowser {
 
       if (DesignMode) return;
       InitializeComponent();
-
+      
       InitializeChromium(tabPage1);
     }
     // " private void inintializeChromium  = Method
     private void InitializeChromium(TabPage anyTabPage) { //(TabPage anyTabPage) =  Arguments
+      string cacheLocation = @"C:\Program Files(x86)\EzClapsBrowser\cache";
+      if (!Directory.Exists(cacheLocation)) {
+        Directory.CreateDirectory(cacheLocation);
+      }
       CefSettings settings = new CefSettings();
-      settings.CachePath = @"C:\Program Files\EzClapsBrowser\Cache.txt";
+      settings.CachePath = cacheLocation;
       var browser = new ChromiumWebBrowser(_homePage);
       browser.Dock = DockStyle.Fill;
+      browser.DownloadHandler = new DownloadHandler();
       anyTabPage.Controls.Add(browser);
       browser.Parent = tabControl.SelectedTab;
       browser.AddressChanged += EzClaps_AddressChanged;
       browser.TitleChanged += EzClaps_TitleChanged;
       //Creates a new Tab with a browser attached to it also updates the browser tab name and the search bar
-      browser.DownloadHandler = new DownloadHandler();
+   
       //this class makes you able to download files and save them to where you want them to be placed
+      Cef.EnableHighDPISupport();
       
     }
     private void btnSearch_Click(object sender, EventArgs e) {
@@ -52,6 +59,7 @@ namespace EzClapsBrowser {
       txtSearchBar.Text = _homePage;
       NavigateToNewPage(browser, _homePage);
       //sends you back to the homepage Google.com
+      
     }
 
     private void NavigateToNewPage(ChromiumWebBrowser browser, string url) {
@@ -138,7 +146,7 @@ namespace EzClapsBrowser {
       tabControl.TabPages.Remove(tabPage);
 
       tabPage.Dispose();
-      //Pssst hey :)
+      
 
       tabControl.SelectedIndex = tabIndex - 1;
 
@@ -160,7 +168,7 @@ namespace EzClapsBrowser {
 
       Application.ExitThread();
     }
-
+    
     private void btnMenu_Click(object sender, EventArgs e) {
       CtxMenu.Show(MousePosition);
       //opens the contextbrowser menu and opens it on your mouse position 
