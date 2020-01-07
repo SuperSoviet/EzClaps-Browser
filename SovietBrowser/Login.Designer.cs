@@ -83,6 +83,7 @@
       // 
       // pictureBox1
       // 
+      this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
       this.pictureBox1.Image = global::EzClapsBrowser.Properties.Resources.images;
       this.pictureBox1.InitialImage = global::EzClapsBrowser.Properties.Resources.images;
       this.pictureBox1.Location = new System.Drawing.Point(32, 12);
@@ -113,6 +114,7 @@
       // 
       // textBoxVersion
       // 
+      this.textBoxVersion.BackColor = System.Drawing.SystemColors.ButtonHighlight;
       this.textBoxVersion.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.textBoxVersion.Location = new System.Drawing.Point(13, 225);
       this.textBoxVersion.Name = "textBoxVersion";
@@ -124,6 +126,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
       this.ClientSize = new System.Drawing.Size(354, 257);
       this.Controls.Add(this.textBoxVersion);
       this.Controls.Add(this.lblOr);

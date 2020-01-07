@@ -210,6 +210,3 @@ namespace EzClapsBrowser {
     }
   }
 }
-
-
-
