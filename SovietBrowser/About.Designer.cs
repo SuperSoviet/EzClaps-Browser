@@ -25,9 +25,10 @@
     private void InitializeComponent() {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
       this.pbMyLogo = new System.Windows.Forms.PictureBox();
-      this.label2 = new System.Windows.Forms.Label();
       this.lblMyDiscord = new System.Windows.Forms.LinkLabel();
-      this.tekstBoxVersion = new System.Windows.Forms.TextBox();
+      this.txtBoxVersion = new System.Windows.Forms.TextBox();
+      this.txtBrowserName = new System.Windows.Forms.TextBox();
+      this.txtCopyRight = new System.Windows.Forms.TextBox();
       ((System.ComponentModel.ISupportInitialize)(this.pbMyLogo)).BeginInit();
       this.SuspendLayout();
       // 
@@ -41,16 +42,6 @@
       this.pbMyLogo.TabStop = false;
       this.pbMyLogo.Click += new System.EventHandler(this.pbMyLogo_Click);
       // 
-      // label2
-      // 
-      this.label2.AutoSize = true;
-      this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2.Location = new System.Drawing.Point(91, 25);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(134, 16);
-      this.label2.TabIndex = 2;
-      this.label2.Text = "EzClaps Browser";
-      // 
       // lblMyDiscord
       // 
       this.lblMyDiscord.AutoSize = true;
@@ -62,24 +53,43 @@
       this.lblMyDiscord.Text = "Contact us";
       this.lblMyDiscord.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMyDiscord_LinkClicked);
       // 
-      // tekstBoxVersion
+      // txtBoxVersion
       // 
-      this.tekstBoxVersion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.tekstBoxVersion.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.tekstBoxVersion.Location = new System.Drawing.Point(94, 55);
-      this.tekstBoxVersion.Name = "tekstBoxVersion";
-      this.tekstBoxVersion.ReadOnly = true;
-      this.tekstBoxVersion.Size = new System.Drawing.Size(411, 13);
-      this.tekstBoxVersion.TabIndex = 5;
+      this.txtBoxVersion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.txtBoxVersion.ForeColor = System.Drawing.SystemColors.WindowText;
+      this.txtBoxVersion.Location = new System.Drawing.Point(94, 55);
+      this.txtBoxVersion.Name = "txtBoxVersion";
+      this.txtBoxVersion.ReadOnly = true;
+      this.txtBoxVersion.Size = new System.Drawing.Size(411, 13);
+      this.txtBoxVersion.TabIndex = 5;
+      // 
+      // txtBrowserName
+      // 
+      this.txtBrowserName.BackColor = System.Drawing.SystemColors.Control;
+      this.txtBrowserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.txtBrowserName.Location = new System.Drawing.Point(95, 29);
+      this.txtBrowserName.Name = "txtBrowserName";
+      this.txtBrowserName.Size = new System.Drawing.Size(410, 13);
+      this.txtBrowserName.TabIndex = 6;
+      // 
+      // txtCopyRight
+      // 
+      this.txtCopyRight.BackColor = System.Drawing.SystemColors.Control;
+      this.txtCopyRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.txtCopyRight.Location = new System.Drawing.Point(405, 100);
+      this.txtCopyRight.Name = "txtCopyRight";
+      this.txtCopyRight.Size = new System.Drawing.Size(100, 13);
+      this.txtCopyRight.TabIndex = 7;
       // 
       // About
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(517, 125);
-      this.Controls.Add(this.tekstBoxVersion);
+      this.Controls.Add(this.txtCopyRight);
+      this.Controls.Add(this.txtBrowserName);
+      this.Controls.Add(this.txtBoxVersion);
       this.Controls.Add(this.lblMyDiscord);
-      this.Controls.Add(this.label2);
       this.Controls.Add(this.pbMyLogo);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MaximumSize = new System.Drawing.Size(533, 164);
@@ -97,8 +107,9 @@
     #endregion
 
     private System.Windows.Forms.PictureBox pbMyLogo;
-    private System.Windows.Forms.Label label2;
     private System.Windows.Forms.LinkLabel lblMyDiscord;
-    private System.Windows.Forms.TextBox tekstBoxVersion;
-  }
+    private System.Windows.Forms.TextBox txtBoxVersion;
+        private System.Windows.Forms.TextBox txtBrowserName;
+        private System.Windows.Forms.TextBox txtCopyRight;
+    }
 }

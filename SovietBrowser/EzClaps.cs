@@ -28,12 +28,9 @@ namespace EzClapsBrowser {
     }
     // " private void inintializeChromium  = Method
     private void InitializeChromium(TabPage anyTabPage) { //(TabPage anyTabPage) =  Arguments
-      string cacheLocation = @"C:\Program Files(x86)\EzClapsBrowser\cache";
-      if (!Directory.Exists(cacheLocation)) {
-        Directory.CreateDirectory(cacheLocation);
-      }
+    
       CefSettings settings = new CefSettings();
-      settings.CachePath = cacheLocation;
+      settings.CachePath = @"C:\Program Files(x86)\EzClapsBrowser\cache";
       var browser = new ChromiumWebBrowser(_homePage);
       browser.Dock = DockStyle.Fill;
       browser.DownloadHandler = new DownloadHandler();
@@ -42,10 +39,8 @@ namespace EzClapsBrowser {
       browser.AddressChanged += EzClaps_AddressChanged;
       browser.TitleChanged += EzClaps_TitleChanged;
       //Creates a new Tab with a browser attached to it also updates the browser tab name and the search bar
-   
       //this class makes you able to download files and save them to where you want them to be placed
       Cef.EnableHighDPISupport();
-      
     }
     private void btnSearch_Click(object sender, EventArgs e) {
       ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;

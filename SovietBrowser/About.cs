@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 
+
 namespace EzClapsBrowser {
   public partial class About : Form {
     public About() {
@@ -27,7 +28,9 @@ namespace EzClapsBrowser {
     private void About_Load(object sender, EventArgs e) {
       //shows Assembly version ( version of the browser ) 
       Version version = Assembly.GetExecutingAssembly().GetName().Version;
-      tekstBoxVersion.Text = "EzclapsBrowser version: " + version;
+      txtBoxVersion.Text = "version: " + version;
+      txtCopyRight.Text = "Copyright ©  2019";
+      txtBrowserName.Text = AssemblyName.GetAssemblyName(Assembly.GetExecutingAssembly().Location).Name;
     }
   }
 }
