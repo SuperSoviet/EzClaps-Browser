@@ -29,6 +29,7 @@
       this.txtBoxVersion = new System.Windows.Forms.TextBox();
       this.txtBrowserName = new System.Windows.Forms.TextBox();
       this.txtCopyRight = new System.Windows.Forms.TextBox();
+      this.lblCompany = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.pbMyLogo)).BeginInit();
       this.SuspendLayout();
       // 
@@ -69,6 +70,7 @@
       this.txtBrowserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtBrowserName.Location = new System.Drawing.Point(95, 29);
       this.txtBrowserName.Name = "txtBrowserName";
+      this.txtBrowserName.ReadOnly = true;
       this.txtBrowserName.Size = new System.Drawing.Size(410, 13);
       this.txtBrowserName.TabIndex = 6;
       // 
@@ -78,14 +80,24 @@
       this.txtCopyRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtCopyRight.Location = new System.Drawing.Point(405, 100);
       this.txtCopyRight.Name = "txtCopyRight";
+      this.txtCopyRight.ReadOnly = true;
       this.txtCopyRight.Size = new System.Drawing.Size(100, 13);
       this.txtCopyRight.TabIndex = 7;
+      // 
+      // lblCompany
+      // 
+      this.lblCompany.AutoSize = true;
+      this.lblCompany.Location = new System.Drawing.Point(27, 86);
+      this.lblCompany.Name = "lblCompany";
+      this.lblCompany.Size = new System.Drawing.Size(0, 13);
+      this.lblCompany.TabIndex = 8;
       // 
       // About
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(517, 125);
+      this.Controls.Add(this.lblCompany);
       this.Controls.Add(this.txtCopyRight);
       this.Controls.Add(this.txtBrowserName);
       this.Controls.Add(this.txtBoxVersion);
@@ -111,5 +123,6 @@
     private System.Windows.Forms.TextBox txtBoxVersion;
         private System.Windows.Forms.TextBox txtBrowserName;
         private System.Windows.Forms.TextBox txtCopyRight;
+        private System.Windows.Forms.Label lblCompany;
     }
 }
