@@ -29,7 +29,11 @@ namespace EzClapsBrowser {
       //shows Assembly version ( version of the browser ) 
       Version version = Assembly.GetExecutingAssembly().GetName().Version;
       txtBoxVersion.Text = "version: " + version;
-      txtCopyRight.Text ="Copyright ©  2019";
+    
+      var copyright = ((AssemblyCopyrightAttribute)Attribute.GetCustomAttribute(Assembly.GetExecutingAssembly(), typeof(AssemblyCopyrightAttribute), false));
+      if (copyright != null) {
+        txtCopyRight.Text = copyright.Copyright;
+      }
       lblCompany.Text = Application.CompanyName;
       txtBrowserName.Text = AssemblyName.GetAssemblyName(Assembly.GetExecutingAssembly().Location).Name;
     }
