@@ -14,8 +14,8 @@ namespace EzClapsBrowser {
   public partial class About : Form {
     public About() {
       InitializeComponent();
-      
-  }
+
+    }
     private void lblMyDiscord_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
       //if you press the linklabel you open the Register.cs 
       Register discord = new Register();
@@ -29,13 +29,13 @@ namespace EzClapsBrowser {
       //shows Assembly version ( version of the browser ) 
       Version version = Assembly.GetExecutingAssembly().GetName().Version;
       txtBoxVersion.Text = "version: " + version;
-    //shows assembly copyright 
+      //shows assembly copyright 
       var copyright = ((AssemblyCopyrightAttribute)Attribute.GetCustomAttribute(Assembly.GetExecutingAssembly(), typeof(AssemblyCopyrightAttribute), false));
       if (copyright != null) {
         txtCopyRight.Text = copyright.Copyright;
       }
       //shows assembly companyname
-      lblCompany.Text = Application.CompanyName;
+      lblCompany.Text = "For more information on " + Application.CompanyName;
       txtBrowserName.Text = AssemblyName.GetAssemblyName(Assembly.GetExecutingAssembly().Location).Name;
     }
   }

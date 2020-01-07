@@ -46,7 +46,7 @@
       // lblMyDiscord
       // 
       this.lblMyDiscord.AutoSize = true;
-      this.lblMyDiscord.Location = new System.Drawing.Point(27, 100);
+      this.lblMyDiscord.Location = new System.Drawing.Point(61, 100);
       this.lblMyDiscord.Name = "lblMyDiscord";
       this.lblMyDiscord.Size = new System.Drawing.Size(58, 13);
       this.lblMyDiscord.TabIndex = 3;
@@ -87,7 +87,7 @@
       // lblCompany
       // 
       this.lblCompany.AutoSize = true;
-      this.lblCompany.Location = new System.Drawing.Point(27, 86);
+      this.lblCompany.Location = new System.Drawing.Point(7, 83);
       this.lblCompany.Name = "lblCompany";
       this.lblCompany.Size = new System.Drawing.Size(0, 13);
       this.lblCompany.TabIndex = 8;
