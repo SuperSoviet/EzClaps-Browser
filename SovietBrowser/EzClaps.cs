@@ -23,12 +23,16 @@ namespace EzClapsBrowser {
 
       if (DesignMode) return;
       InitializeComponent();
-      
+
       InitializeChromium(tabPage1);
     }
+  
+      
+      
+
     // " private void inintializeChromium  = Method
     private void InitializeChromium(TabPage anyTabPage) { //(TabPage anyTabPage) =  Arguments
-    
+
       CefSettings settings = new CefSettings();
       settings.CachePath = @"C:\Program Files(x86)\EzClapsBrowser\cache";
       var browser = new ChromiumWebBrowser(_homePage);
@@ -41,6 +45,7 @@ namespace EzClapsBrowser {
       //Creates a new Tab with a browser attached to it also updates the browser tab name and the search bar
       //this class makes you able to download files and save them to where you want them to be placed
       Cef.EnableHighDPISupport();
+
     }
     private void btnSearch_Click(object sender, EventArgs e) {
       ChromiumWebBrowser browser = tabControl.SelectedTab.Controls[0] as ChromiumWebBrowser;
@@ -54,7 +59,7 @@ namespace EzClapsBrowser {
       txtSearchBar.Text = _homePage;
       NavigateToNewPage(browser, _homePage);
       //sends you back to the homepage Google.com
-      
+
     }
 
     private void NavigateToNewPage(ChromiumWebBrowser browser, string url) {
@@ -101,20 +106,21 @@ namespace EzClapsBrowser {
     private void EzClaps_AddressChanged(object sender, AddressChangedEventArgs e) {
       //updates the adress bar based on the url that has been  put in
       this.Invoke(new MethodInvoker(() => {
-      txtSearchBar.Text = e.Address;
-      //if the the adressbar is updated in one way or another it wil detect it and send the url to the History.txt file
-      // causing the history tab to update 
-      //but if the Private tab is active it won't save your browser history 
-      if (cbPrivateTab.Checked) {
-        return;
-      }
-      //First checks the location of the history tab then adds the text from the searchbar and adds it in the History.txt
+        txtSearchBar.Text = e.Address;
+        //if the the adressbar is updated in one way or another it wil detect it and send the url to the History.txt file
+        // causing the history tab to update 
+        //but if the Private tab is active it won't save your browser history 
+        if (cbPrivateTab.Checked) {
+          return;
+        }
+        //First checks the location of the history tab then adds the text from the searchbar and adds it in the History.txt
         showHistory showHistory = new showHistory();
         using (StreamWriter History = File.AppendText(@"C:\EzClapsBrowser\History.txt")) {
           History.WriteLine(txtSearchBar.Text);
         }
       }));
     }
+
     private void EzClaps_TitleChanged(object sender, TitleChangedEventArgs e) {
       this.Invoke(new MethodInvoker(() => {
         tabControl.SelectedTab.Text = e.Title;
@@ -141,7 +147,7 @@ namespace EzClapsBrowser {
       tabControl.TabPages.Remove(tabPage);
 
       tabPage.Dispose();
-      
+
 
       tabControl.SelectedIndex = tabIndex - 1;
 
@@ -159,11 +165,7 @@ namespace EzClapsBrowser {
     }
 
     //safly lets you shutdown the browser
-    private void EzClapsBrowser_FormClosing(object sender, FormClosingEventArgs e) {
-
-      Application.ExitThread();
-    }
-    
+  
     private void btnMenu_Click(object sender, EventArgs e) {
       CtxMenu.Show(MousePosition);
       //opens the contextbrowser menu and opens it on your mouse position 
@@ -207,6 +209,10 @@ namespace EzClapsBrowser {
       //opens the About winform
       About about = new About();
       about.Show();
+    }
+    private void EzClapsBrowser_FormClosing(object sender, FormClosingEventArgs e) {
+      Dispose();
+      Application.ExitThread();
     }
   }
 }

@@ -17,8 +17,8 @@ namespace EzClapsBrowser {
       InitializeComponent();
     }
     //usernames and passwords to use in the login
-    string[] usernames = { "admin", "moderator","Panteradox" };
-    string[] passwords = { "100%Koffie", "bubugamer", "Pa130576" };
+    string[] usernames = { "stefano","admin", "moderator","Panteradox" };
+    string[] passwords = { "100%Koffie","admin", "bubugamer", "Pa130576" };
 
     private void btnLogin_Click(object sender, EventArgs e) {
       //the moment you click the button login it checks if your logins are correct 
@@ -52,7 +52,7 @@ namespace EzClapsBrowser {
     private void txtUsername_KeyDown(object sender, KeyEventArgs e) {
       //you can use enter to use the login button
       if (e.KeyCode == Keys.Enter) {
-        btnLogin_Click(this, new EventArgs());
+        txtPassword.Select();
       }
     }
 
