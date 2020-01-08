@@ -21,10 +21,8 @@ namespace EzClapsBrowser {
     public DownloadHandler DownloadHandler { get; }
     public EzClapsBrowser() {
     Cef.EnableHighDPISupport();
-
       if (DesignMode) return;
       InitializeComponent();
-
       InitializeChromium(tabPage1);
     }
     // " private void inintializeChromium  = Method

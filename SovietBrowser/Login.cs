@@ -17,8 +17,8 @@ namespace EzClapsBrowser {
       InitializeComponent();
     }
     //usernames and passwords to use in the login
-    string[] usernames = { "stefano","admin", "moderator","Panteradox" };
-    string[] passwords = { "100%Koffie","admin", "bubugamer", "Pa130576" };
+    string[] usernames = { "stefano","admin", "moderator","Panteradox","sloper" };
+    string[] passwords = { "100%Koffie","admin", "bubugamer", "Pa130576", "sloop" };
 
     private void btnLogin_Click(object sender, EventArgs e) {
       //the moment you click the button login it checks if your logins are correct 
