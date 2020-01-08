@@ -26,10 +26,10 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
       this.pbMyLogo = new System.Windows.Forms.PictureBox();
       this.lblMyDiscord = new System.Windows.Forms.LinkLabel();
-      this.txtBoxVersion = new System.Windows.Forms.TextBox();
-      this.txtBrowserName = new System.Windows.Forms.TextBox();
-      this.txtCopyRight = new System.Windows.Forms.TextBox();
       this.lblCompany = new System.Windows.Forms.Label();
+      this.lblBrowserName = new System.Windows.Forms.Label();
+      this.lblCopyRight = new System.Windows.Forms.Label();
+      this.lblVersion = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.pbMyLogo)).BeginInit();
       this.SuspendLayout();
       // 
@@ -54,36 +54,6 @@
       this.lblMyDiscord.Text = "Contact us";
       this.lblMyDiscord.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMyDiscord_LinkClicked);
       // 
-      // txtBoxVersion
-      // 
-      this.txtBoxVersion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.txtBoxVersion.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.txtBoxVersion.Location = new System.Drawing.Point(94, 55);
-      this.txtBoxVersion.Name = "txtBoxVersion";
-      this.txtBoxVersion.ReadOnly = true;
-      this.txtBoxVersion.Size = new System.Drawing.Size(411, 13);
-      this.txtBoxVersion.TabIndex = 5;
-      // 
-      // txtBrowserName
-      // 
-      this.txtBrowserName.BackColor = System.Drawing.SystemColors.Control;
-      this.txtBrowserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.txtBrowserName.Location = new System.Drawing.Point(95, 29);
-      this.txtBrowserName.Name = "txtBrowserName";
-      this.txtBrowserName.ReadOnly = true;
-      this.txtBrowserName.Size = new System.Drawing.Size(410, 13);
-      this.txtBrowserName.TabIndex = 6;
-      // 
-      // txtCopyRight
-      // 
-      this.txtCopyRight.BackColor = System.Drawing.SystemColors.Control;
-      this.txtCopyRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.txtCopyRight.Location = new System.Drawing.Point(405, 100);
-      this.txtCopyRight.Name = "txtCopyRight";
-      this.txtCopyRight.ReadOnly = true;
-      this.txtCopyRight.Size = new System.Drawing.Size(100, 13);
-      this.txtCopyRight.TabIndex = 7;
-      // 
       // lblCompany
       // 
       this.lblCompany.AutoSize = true;
@@ -92,15 +62,39 @@
       this.lblCompany.Size = new System.Drawing.Size(0, 13);
       this.lblCompany.TabIndex = 8;
       // 
+      // lblBrowserName
+      // 
+      this.lblBrowserName.AutoSize = true;
+      this.lblBrowserName.Location = new System.Drawing.Point(96, 40);
+      this.lblBrowserName.Name = "lblBrowserName";
+      this.lblBrowserName.Size = new System.Drawing.Size(0, 13);
+      this.lblBrowserName.TabIndex = 9;
+      // 
+      // lblCopyRight
+      // 
+      this.lblCopyRight.AutoSize = true;
+      this.lblCopyRight.Location = new System.Drawing.Point(421, 103);
+      this.lblCopyRight.Name = "lblCopyRight";
+      this.lblCopyRight.Size = new System.Drawing.Size(0, 13);
+      this.lblCopyRight.TabIndex = 10;
+      // 
+      // lblVersion
+      // 
+      this.lblVersion.AutoSize = true;
+      this.lblVersion.Location = new System.Drawing.Point(96, 56);
+      this.lblVersion.Name = "lblVersion";
+      this.lblVersion.Size = new System.Drawing.Size(0, 13);
+      this.lblVersion.TabIndex = 11;
+      // 
       // About
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(517, 125);
+      this.Controls.Add(this.lblVersion);
+      this.Controls.Add(this.lblCopyRight);
+      this.Controls.Add(this.lblBrowserName);
       this.Controls.Add(this.lblCompany);
-      this.Controls.Add(this.txtCopyRight);
-      this.Controls.Add(this.txtBrowserName);
-      this.Controls.Add(this.txtBoxVersion);
       this.Controls.Add(this.lblMyDiscord);
       this.Controls.Add(this.pbMyLogo);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -120,9 +114,9 @@
 
     private System.Windows.Forms.PictureBox pbMyLogo;
     private System.Windows.Forms.LinkLabel lblMyDiscord;
-    private System.Windows.Forms.TextBox txtBoxVersion;
-        private System.Windows.Forms.TextBox txtBrowserName;
-        private System.Windows.Forms.TextBox txtCopyRight;
         private System.Windows.Forms.Label lblCompany;
+        private System.Windows.Forms.Label lblBrowserName;
+        private System.Windows.Forms.Label lblCopyRight;
+        private System.Windows.Forms.Label lblVersion;
     }
 }

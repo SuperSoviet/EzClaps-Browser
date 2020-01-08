@@ -143,7 +143,6 @@ namespace EzClapsBrowser {
         tabIndex = 1;
       }
 
-
       tabControl.TabPages.Remove(tabPage);
 
       tabPage.Dispose();

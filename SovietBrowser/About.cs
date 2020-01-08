@@ -28,15 +28,15 @@ namespace EzClapsBrowser {
     private void About_Load(object sender, EventArgs e) {
       //shows Assembly version ( version of the browser ) 
       Version version = Assembly.GetExecutingAssembly().GetName().Version;
-      txtBoxVersion.Text = "version: " + version;
+      lblVersion.Text = "version: " + version;
       //shows assembly copyright 
       var copyright = ((AssemblyCopyrightAttribute)Attribute.GetCustomAttribute(Assembly.GetExecutingAssembly(), typeof(AssemblyCopyrightAttribute), false));
       if (copyright != null) {
-        txtCopyRight.Text = copyright.Copyright;
+        lblCopyRight.Text = copyright.Copyright;
       }
       //shows assembly companyname
       lblCompany.Text = "For more information on " + Application.CompanyName;
-      txtBrowserName.Text = AssemblyName.GetAssemblyName(Assembly.GetExecutingAssembly().Location).Name;
+      lblBrowserName.Text = AssemblyName.GetAssemblyName(Assembly.GetExecutingAssembly().Location).Name;
     }
   }
 }
