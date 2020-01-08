@@ -32,7 +32,7 @@ namespace EzClapsBrowser {
       //shows assembly copyright 
       var copyright = ((AssemblyCopyrightAttribute)Attribute.GetCustomAttribute(Assembly.GetExecutingAssembly(), typeof(AssemblyCopyrightAttribute), false));
       if (copyright != null) {
-        lblCopyRight.Text = copyright.Copyright;
+      lblCopyRight.Text = copyright.Copyright;
       }
       //shows assembly companyname
       lblCompany.Text = "For more information on " + Application.CompanyName;
