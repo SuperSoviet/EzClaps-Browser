@@ -13,12 +13,14 @@ namespace EzClapsBrowser {
   public partial class showHistory : Form {
     public showHistory() {
       InitializeComponent();
-
+      //root and path of the Directory and file location
+      
+      string root = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\EzclapsBrowser";
       var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\EzclapsBrowser\History.txt";
       //looks if the history.txt file exists
       if (!File.Exists(path)) {
         //path doesn't exist yet so we create one 
-        string root = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\EzclapsBrowser";
+        
         //Looks up if the Folder exists 
         if (!Directory.Exists(root)) {
           //doesn't exist so we make one based on the root directory
