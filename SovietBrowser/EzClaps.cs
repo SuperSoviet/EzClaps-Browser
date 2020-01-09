@@ -108,7 +108,7 @@ namespace EzClapsBrowser {
         }
         //First checks the location of the history tab then adds the text from the searchbar and adds it in the History.txt
         showHistory showHistory = new showHistory();
-        using (StreamWriter History = File.AppendText(@"C:\EzClapsBrowser\History.txt")) {
+        using (StreamWriter History = File.AppendText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\EzclapsBrowser\History.txt")) {
           History.WriteLine(txtSearchBar.Text);
         }
       }));

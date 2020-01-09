@@ -13,12 +13,12 @@ namespace EzClapsBrowser {
   public partial class showHistory : Form {
     public showHistory() {
       InitializeComponent();
-      
-      var path = (@"C:\EzClapsBrowser\History.txt");
+
+      var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\EzclapsBrowser\History.txt";
       //looks if the history.txt file exists
       if (!File.Exists(path)) {
         //path doesn't exist yet so we create one 
-        string root = @"C:\EzClapsBrowser";
+        string root = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\EzclapsBrowser";
         //Looks up if the Folder exists 
         if (!Directory.Exists(root)) {
           //doesn't exist so we make one based on the root directory
@@ -35,7 +35,7 @@ namespace EzClapsBrowser {
     }
     private void btnClear_Click(object sender, EventArgs e) {
       //Takes the path
-      string path = @"C:\EzClapsBrowser\History.txt";
+      var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\EzclapsBrowser\History.txt";
       //checks if it exists
       if (File.Exists(path)) {
         //it exists and since we want to clear it we delete the txt file and refresh the page
