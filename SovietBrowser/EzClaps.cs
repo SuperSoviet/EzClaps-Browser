@@ -17,7 +17,7 @@ using System.IO;
 namespace EzClapsBrowser {
   public partial class EzClapsBrowser : Form {
     //Homepage
-    private string _homePage = "google.nl";
+    private string _homePage = " ";
     public DownloadHandler DownloadHandler { get; }
     public EzClapsBrowser() {
     Cef.EnableHighDPISupport();
@@ -27,7 +27,7 @@ namespace EzClapsBrowser {
     }
     // " private void inintializeChromium  = Method
     private void InitializeChromium(TabPage anyTabPage) { //(TabPage anyTabPage) =  Arguments
-
+    
       CefSettings settings = new CefSettings();
       settings.CachePath = @"C:\Program Files(x86)\EzClapsBrowser\cache";
       var browser = new ChromiumWebBrowser(_homePage);
@@ -98,17 +98,23 @@ namespace EzClapsBrowser {
 
     private void EzClaps_AddressChanged(object sender, AddressChangedEventArgs e) {
       //updates the adress bar based on the url that has been  put in
-      this.Invoke(new MethodInvoker(() => {
+      this.Invoke(new MethodInvoker(() =>
+      {
         txtSearchBar.Text = e.Address;
         //if the the adressbar is updated in one way or another it wil detect it and send the url to the History.txt file
         // causing the history tab to update 
         //but if the Private tab is active it won't save your browser history 
-        if (cbPrivateTab.Checked) {
+        if (cbPrivateTab.Checked)
+        {
           return;
         }
+
         //First checks the location of the history tab then adds the text from the searchbar and adds it in the History.txt
         showHistory showHistory = new showHistory();
-        using (StreamWriter History = File.AppendText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\EzclapsBrowser\History.txt")) {
+        using (StreamWriter History =
+          File.AppendText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
+                          @"\EzclapsBrowser\History.txt"))
+        {
           History.WriteLine(txtSearchBar.Text);
         }
       }));
@@ -205,6 +211,12 @@ namespace EzClapsBrowser {
     private void EzClapsBrowser_FormClosing(object sender, FormClosingEventArgs e) {
       Dispose();
       Application.ExitThread();
+    }
+
+    private void ctxSetHomePage_Click(object sender, EventArgs e)
+    {
+      SetHomePage sethome = new SetHomePage();
+      sethome.Show();
     }
   }
 }
