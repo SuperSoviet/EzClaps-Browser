@@ -43,7 +43,7 @@ namespace EzClapsBrowser
             this.txtHomePage.Name = "txtHomePage";
             this.txtHomePage.Size = new System.Drawing.Size(433, 23);
             this.txtHomePage.TabIndex = 0;
-            this.txtHomePage.TextChanged += new System.EventHandler(this.txtHomePage_TextChanged);
+        
             // 
             // btnSaveHome
             // 
