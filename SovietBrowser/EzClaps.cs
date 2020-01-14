@@ -14,10 +14,13 @@ using System.IO;
 
 
 
+
 namespace EzClapsBrowser {
   public partial class EzClapsBrowser : Form {
     //Homepage
-    private string _homePage = " ";
+    SetHomePage settinghomepage = new SetHomePage();
+    public string _homePage;
+   
     public DownloadHandler DownloadHandler { get; }
     public EzClapsBrowser() {
     Cef.EnableHighDPISupport();
@@ -27,8 +30,8 @@ namespace EzClapsBrowser {
     }
     // " private void inintializeChromium  = Method
     private void InitializeChromium(TabPage anyTabPage) { //(TabPage anyTabPage) =  Arguments
-    
       CefSettings settings = new CefSettings();
+      _homePage = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\EzclapsBrowser\Home.txt");
       settings.CachePath = @"C:\Program Files(x86)\EzClapsBrowser\cache";
       var browser = new ChromiumWebBrowser(_homePage);
       browser.Dock = DockStyle.Fill;
@@ -211,6 +214,7 @@ namespace EzClapsBrowser {
     private void EzClapsBrowser_FormClosing(object sender, FormClosingEventArgs e) {
       Dispose();
       Application.ExitThread();
+     
     }
 
     private void ctxSetHomePage_Click(object sender, EventArgs e)
